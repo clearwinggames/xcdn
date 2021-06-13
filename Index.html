@@ -13,11 +13,20 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
 <script type="text/babel">
-  const getMessage = () => "<b>Hello World</b>";
+  const getMessage = () => "<b>Hello World</b>";  
   
   document.getElementById("output").innerHTML = getMessage();
   
+  document.getElementById("output").innerHTML += getLineBreaks();
+  
   document.getElementById("output").innerHTML += " and so on...";
+  
+  function getLineBreaks() {
+      return (
+         <br />
+         <br />
+      );
+  }
 </script>  
   
 </body>
