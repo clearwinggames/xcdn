@@ -41,7 +41,7 @@
     document.getElementById('output').appendChild(App);
   
   function getLineBreaks(text) {
-      return <div><br /> Line breaks... are {text}.<br /><InnerLineBreaks /><br /></div>;
+      return <div><br /> Line breaks... are {text}.<br /><InnerLineBreaks></InnerLineBreaks><br /></div>;
   }
   function InnerLineBreaks() {
   	return <div><br /><br />Super cool<br /><br /></div>;
