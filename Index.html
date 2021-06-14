@@ -27,7 +27,17 @@ Vue.component('my-component', {
 	data: {
 		
 	},
-	template: '<div>My Component Here</div>'
+	methods: {
+		getJSX: function() {
+			return (
+				<div>All your divs, divs divs... are belong to us...</div>
+			);
+		},
+		jsxAsHtml: function(jsxObject) {
+			return jsxObject.outerHTML;
+		}
+	},
+	template: '<div>MyComponent Is: jsxAsHtml(getJSX())</div>'
 });
 var app = new Vue({
   el: '#vueApp',
