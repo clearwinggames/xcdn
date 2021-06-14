@@ -21,15 +21,19 @@
 <script src='jsxr.js'>
 </script>
 <script>
+
+Vue.component('my-component', {
+	props: [],
+	data: {
+		
+	},
+	template: '<div>My Component Here</div>'
+});
 var app = new Vue({
   el: '#vueApp',
   data: {
     message: 'Hello Vue!'
   }
-});
-Vue.component('my-component', {
-	props: [],
-	template: '<div>My Component Here</div>'
 });
 	</script>
   
