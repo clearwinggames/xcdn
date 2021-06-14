@@ -20,6 +20,30 @@
  
 <script src='jsxr.js'>
 </script>
+	
+	<script type="text/babel" data-type="module">
+/** @jsx createElement */
+
+  const getMessage = () => "<b>Hello World</b>";  
+  
+  document.getElementById("output").innerHTML = getMessage(); 
+  
+  var App = (
+  	<div>
+		<br />App Line Breaks<br />
+	</div>
+  );
+    
+  //alert( App.outerHTML );
+
+  document.getElementById('output').appendChild(getLineBreaks('good'));
+  
+    document.getElementById('output').appendChild(App);
+  
+  function getLineBreaks(text) {
+      return <div><br /> Line breaks... are {text}.<br /></div>;
+  }
+</script>  
 <script>
 
 Vue.component('my-component', {
@@ -45,29 +69,7 @@ var app = new Vue({
 });
 	</script>
   
-<script type="text/babel" data-type="module">
-/** @jsx createElement */
 
-  const getMessage = () => "<b>Hello World</b>";  
-  
-  document.getElementById("output").innerHTML = getMessage(); 
-  
-  var App = (
-  	<div>
-		<br />App Line Breaks<br />
-	</div>
-  );
-    
-  //alert( App.outerHTML );
-
-  document.getElementById('output').appendChild(getLineBreaks('good'));
-  
-    document.getElementById('output').appendChild(App);
-  
-  function getLineBreaks(text) {
-      return <div><br /> Line breaks... are {text}.<br /></div>;
-  }
-</script>  
   
 </body>
 </html>
