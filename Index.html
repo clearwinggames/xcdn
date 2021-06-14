@@ -11,56 +11,23 @@
   </div>
   
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  
-
-<script>
-const createElement = (tag, props, ...children) => {
-	const element = document.createElement(tag)
-
-	Object.entries(props || {}).forEach(([name, value]) => {
-		if (name.startsWith('on') && name.toLowerCase() in window)
-			element.addEventListener(name.toLowerCase().substr(2), value)
-		else element.setAttribute(name, value.toString())
-	})
-
-	children.forEach((child) => {
-		appendChild(element, child)
-	})
-
-	return element
-}
-
-
-
-const appendChild = (parent, child) => {
-	if (Array.isArray(child))
-		child.forEach((nestedChild) => appendChild(parent, nestedChild))
-	else
-		parent.appendChild(
-			child.nodeType ? child : document.createTextNode(child)
-		)
-}
-  </script>
+ 
+<script src='jsxr.js'>
+</script>
   
 <script type="text/babel" data-type="module">
 /** @jsx createElement */
 
   const getMessage = () => "<b>Hello World</b>";  
   
-  document.getElementById("output").innerHTML = getMessage();
+  document.getElementById("output").innerHTML = getMessage(); 
   
-//  document.getElementById("output").innerHTML += ReactDOMServer.renderToString(getLineBreaks());
-
-  alert(typeof getLineBreaks());
-  
-const App = (
-	<div>
-		<p>My awesome app :)</p>
+  var App = (
+  	<div>
+		<br />App Line Breaks<br />
 	</div>
-)
-  
-  document.getElementById("output").innerHTML += " and so on...";
-  
+  );
+
   document.getElementById('output').appendChild(getLineBreaks());
   
     document.getElementById('output').appendChild(App);
