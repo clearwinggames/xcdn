@@ -8,8 +8,10 @@
   </div>
   
   <div id="vueApp">
-	  {{ message }}
-	</div>
+{{ message }}
+	  
+<my-component></my-component>
+</div>
   <div id="output">
   </div>
   
@@ -24,7 +26,11 @@ var app = new Vue({
   data: {
     message: 'Hello Vue!'
   }
-})
+});
+Vue.component('my-component', {
+	props: [],
+	template: '<div>My Component Here</div>'
+});
 	</script>
   
 <script type="text/babel" data-type="module">
