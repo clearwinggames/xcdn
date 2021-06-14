@@ -35,7 +35,7 @@ Vue.component('my-component', {
 			return jsxObject.outerHTML;
 		}
 	},
-	template: '<div>MyComponent Is: jsxAsHtml(getJSX()) </div>'
+	template: '<div>MyComponent Is: <span v-html="jsxAsHtml(getJSX())"></span>  </div>'
 });
 var app = new Vue({
   el: '#vueApp',
