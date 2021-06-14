@@ -7,13 +7,25 @@
     Hello CDN
   </div>
   
+  <div id="vueApp">
+	  {{ message }}
+	</div>
   <div id="output">
   </div>
   
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.1/vue.cjs.min.js"></script>
  
 <script src='jsxr.js'>
 </script>
+<script>
+var app = new Vue({
+  el: '#vueApp',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+	</script>
   
 <script type="text/babel" data-type="module">
 /** @jsx createElement */
