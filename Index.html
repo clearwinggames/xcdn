@@ -61,9 +61,9 @@ const App = (
   
   document.getElementById("output").innerHTML += " and so on...";
   
-  document.getElementById('root').appendChild(getLineBreaks());
+  document.getElementById('output').appendChild(getLineBreaks());
   
-    document.getElementById('root').appendChild(App);
+    document.getElementById('output').appendChild(App);
   
   function getLineBreaks() {
       return <div><br /> Line breaks... <br /></div>;
