@@ -52,14 +52,14 @@ Vue.component('my-component', {
 		
 	},
 	methods: {
-		getJSX: function() {
-			return getLineBreaks('super cool');
+		getJSX: function(andSoOn) {
+			return <span>Arbitrary JSX is now supported! {andSoOn}. Whoo</span>;
 		},
 		jsxAsHtml: function(jsxObject) {
 			return jsxObject.outerHTML;
 		}
 	},
-	template: '<div>MyComponent Is: <span v-html="jsxAsHtml(getJSX())"></span>  </div>'
+	template: '<div>MyComponent Is: <span v-html="jsxAsHtml(getJSX('That is cool'))"></span>  </div>'
 });
 var app = new Vue({
   el: '#vueApp',
