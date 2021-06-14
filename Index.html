@@ -53,7 +53,17 @@ const appendChild = (parent, child) => {
 
   alert(typeof getLineBreaks());
   
+const App = (
+	<div>
+		<p>My awesome app :)</p>
+	</div>
+)
+  
   document.getElementById("output").innerHTML += " and so on...";
+  
+  document.getElementById('root').appendChild(getLineBreaks());
+  
+    document.getElementById('root').appendChild(App);
   
   function getLineBreaks() {
       return <div><br /> Line breaks... <br /></div>;
