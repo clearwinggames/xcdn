@@ -28,12 +28,12 @@
 	</div>
   );
 
-  document.getElementById('output').appendChild(getLineBreaks());
+  document.getElementById('output').appendChild(getLineBreaks('good'));
   
     document.getElementById('output').appendChild(App);
   
-  function getLineBreaks() {
-      return <div><br /> Line breaks... <br /></div>;
+  function getLineBreaks(text) {
+      return <div><br /> Line breaks... are {text}.<br /></div>;
   }
 </script>  
   
