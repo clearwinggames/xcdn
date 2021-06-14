@@ -29,15 +29,13 @@ Vue.component('my-component', {
 	},
 	methods: {
 		getJSX: function() {
-			return (
-				<div>All your divs, divs divs... are belong to us...</div>
-			);
+			return getLineBreaks('jsx');
 		},
 		jsxAsHtml: function(jsxObject) {
 			return jsxObject.outerHTML;
 		}
 	},
-	template: '<div>MyComponent Is: ' + this.jsxAsHtml(this.getJSX)) + '</div>'
+	template: '<div>MyComponent Is: jsxAsHtml(getJSX()) </div>'
 });
 var app = new Vue({
   el: '#vueApp',
