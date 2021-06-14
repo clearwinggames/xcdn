@@ -53,7 +53,7 @@ Vue.component('my-component', {
 	},
 	methods: {
 		getJSX: function() {
-			return (<div>hi there</div>);
+			return getLineBreaks('super cool');
 		},
 		jsxAsHtml: function(jsxObject) {
 			return jsxObject.outerHTML;
