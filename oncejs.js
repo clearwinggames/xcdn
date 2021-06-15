@@ -1,3 +1,11 @@
+function burnTime(milliseconds){
+    return Promise(function(resolve, reject) {
+        setTimeout(() => {
+            resolve("Time Burnt.");
+        }, milliseconds);        
+    });
+};
+
 Promise.prototype.chk = function() {
     return this.analyzed();
 };
