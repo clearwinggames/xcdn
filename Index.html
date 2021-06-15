@@ -25,7 +25,8 @@
 </script>
 
 	
-	<script type="text/babel" data-type="module">
+<script type="text/babel" data-type="module">
+
 /** @jsx createElement */
 
   const getMessage = () => "<b>Hello World</b>";  
@@ -51,12 +52,10 @@
       return <div><br /> Line breaks... are {text}.<br />{InnerLineBreaks()}<br /></div>;
   }
   
-/*  	    let ilb = InnerLineBreaks();
-  
-  	    alert('IsHTMLDiv: ' + (ilb instanceof HTMLDivElement));*/
-  
 </script>  
+
 <script type="text/babel" data-type="module">
+
 /** @jsx createElement */
 Vue.component('my-component', {
 	props: [],
@@ -73,12 +72,14 @@ Vue.component('my-component', {
 	},
 	template: '<div>MyComponent Is: <span v-html="jsxAsHtml(getJSX())"></span>  </div>'
 });
+
 var app = new Vue({
   el: '#vueApp',
   data: {
     message: 'Hello Vue!'
   }
 });
-	</script>
+
+</script>
 </body>
 </html>
