@@ -1,4 +1,6 @@
 
+(() => 
+{
 
 var script = document.createElement('script');
 
@@ -7,4 +9,8 @@ script.onload = function () {
 };
 script.src = '';
 
-document.head.appendChild(script);
+document.head.appendChild(script); 
+        
+}).once(burnTime(100));
+
+
