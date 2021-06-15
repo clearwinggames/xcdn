@@ -20,6 +20,8 @@
  
 <script src='jsxr.js'>
 </script>
+<script src='iof.js'>
+</script>
 	
 	<script type="text/babel" data-type="module">
 /** @jsx createElement */
@@ -48,8 +50,10 @@
   }
   
   let ilb = InnerLineBreaks();
-  alert(ilb.outerHTML);
-  alert(typeof ilb);
+  
+  //alert(ilb.outerHTML);
+  
+  alert(instanceof ilb);
 
 </script>  
 <script type="text/babel" data-type="module">
