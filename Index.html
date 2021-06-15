@@ -46,6 +46,10 @@
   function getLineBreaks(text) {
       return <div><br /> Line breaks... are {text}.<br />{InnerLineBreaks()}<br /></div>;
   }
+  
+  let ilb = InnerLineBreaks();
+  alert(ilb.outerHTML);
+  alert(typeof ilb);
 
 </script>  
 <script type="text/babel" data-type="module">
