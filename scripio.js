@@ -2,6 +2,8 @@
 (() => 
 {
 
+alert('Loading...');
+        
 var script = document.createElement('script');
 
 script.onload = function () {
