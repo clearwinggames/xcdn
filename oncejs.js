@@ -1,5 +1,5 @@
 function burnTime(milliseconds){
-    return Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
         setTimeout(() => {
             resolve("Time Burnt.");
         }, milliseconds);        
