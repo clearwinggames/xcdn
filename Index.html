@@ -49,6 +49,10 @@
       return <div><br /> Line breaks... are {text}.<br />{InnerLineBreaks()}<br /></div>;
   }
   
+  	    let ilb = InnerLineBreaks();
+  
+  	    alert('IsHTMLDiv: ' + (ilb instanceof HTMLDivElement));
+  
 </script>  
 <script type="text/babel" data-type="module">
 /** @jsx createElement */
@@ -74,11 +78,5 @@ var app = new Vue({
   }
 });
 	</script>
-  <script>
-	    let ilb = InnerLineBreaks();
-  
-  	    alert('IsHTMLDiv: ' + (ilb instanceof HTMLDivElement));
-	</script>
-  
 </body>
 </html>
