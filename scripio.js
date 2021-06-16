@@ -1,10 +1,16 @@
-var loadio = function(url, implementationCode, location){
+function loadio(url, implementationCode, location){
 
     let scriptTag = document.createElement('script');
     scriptTag.src = url;
+    
+    if (typeof implementationCode != 'undefined') {
+        
+        scriptTag.onload = implementationCode;
+        scriptTag.onreadystatechange = implementationCode;
+    }
 
-    scriptTag.onload = implementationCode;
-    scriptTag.onreadystatechange = implementationCode;
-
-    location.appendChild(scriptTag);
+    if (typeof location != 'undefined')
+        location.appendChild(scriptTag);
+    else
+        document.body.appendChild(scriptTag);
 };
