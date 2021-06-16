@@ -84,7 +84,10 @@ var app = new Vue({
 </script>
 	
 <script>
-loadio('iof.js');
+	
+(() => loadio('iof.js'))	
+	.once(burnTime(100));
+	
 </script>
 	
 </body>
