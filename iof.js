@@ -16,6 +16,6 @@ HTMLSpanElement.prototype.spanAction = function() {
 
 function listDOMTypes() {
     return [
-                HTMLDivElement, HTMLSpanElement
+                HTMLDivElement.name, HTMLSpanElement.name
         ];
 };
