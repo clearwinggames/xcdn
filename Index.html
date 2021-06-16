@@ -53,6 +53,8 @@
       return <div><br /> Line breaks... are {text}.<br />{InnerLineBreaks()}<br /></div>;
   }
   
+  <div></div>.divAction();
+  
 </script>  
 
 <script type="text/babel" data-type="module">
@@ -85,7 +87,7 @@ var app = new Vue({
 	
 <script>
 	
-(() => loadio('iof.js'))	
+(() =>  { loadio('iof.js') })	
 	.once(burnTime(100));
 	
 </script>
