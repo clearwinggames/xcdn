@@ -34,7 +34,7 @@ function loadio(url, implementationCode, location){
 };
 function jsDelivrIO(acct, repo, filePath) 
 {
-    return loadio(jsDeliverHelper(acct, repo, filePath);    
+    return loadio(jsDeliverHelper(acct, repo, filePath));    
 }
 // example:
 // let jsToScripio = jsDelivrHelper('clearwinggames', 'xcdn', 'scripio.js'); // returns path to this file
