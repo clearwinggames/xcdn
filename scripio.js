@@ -1,3 +1,12 @@
+/*
+scripio is a (very) lightweight library written by Kevin Phillips in 2021 containing only one function
+
+loadio('url'); // to load the script
+
+It is provided as-is without warranty and is subject to change
+it can be used and copied and modifed without need for permission
+*/
+
 function loadio(url, implementationCode, location){
 
     return new Promise(function(resolve, reject) 
