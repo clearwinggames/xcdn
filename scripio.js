@@ -1,5 +1,5 @@
 /*
-scripio is a (very) lightweight library written by Kevin Phillips in 2021 containing only one function
+scripio is a (very) lightweight library written by Kevin Phillips in 2021
 
 loadio('url'); // to load the script
 
