@@ -1,3 +1,24 @@
+/* 
+oncejs is a framework supporting an alternate promise syntax
+created by Kevin Phillips in 2021 (not in afiliation with any particular organization)
+It is provided without warranty and subject to change
+it can be copied and modified and used by someone else for free
+
+CODE EXPLANATION 
+
+"once() syntax":
+
+(function) // runs once done.
+.once() // wait for promise to finish
+.once() // also wait for this promise to finish
+
+(() => alert('abcdefghi'))
+.once(burnTime(1000))
+.once(burnTime(6000))
+.once(burnTime(2000)) // these would run concurrently and take a total of 6 seconds for all three to finish (alert fires after six seconds once all three finish).
+
+*/
+
 function burnTime(milliseconds){
     return new Promise(function(resolve, reject) {
         setTimeout(() => {
@@ -112,18 +133,3 @@ Promise.prototype.run = function(vApp)
 
     this.then(() => { vApp.userReport() });
 };
-
-/* CODE EXPLANATION 
-
-"once() syntax":
-
-(function) // runs once done.
-.once() // wait for promise to finish
-.once() // also wait for this promise to finish
-
-(() => alert('abcdefghi'))
-.once(vue.slowGetUser(5000))
-.once(vue.slowGetUser(10000))
-.once(vue.slowGetUser(15000))
-
-*/
