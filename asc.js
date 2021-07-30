@@ -3,7 +3,6 @@ async function doThings()
   await doOneThing(3500);
   await doAnotherThing(3500);
 }
-
 async function doOneThing(ms)
 {
     return new Promise(function(resolve,reject) 
