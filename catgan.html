@@ -1,0 +1,70 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="xVue">
+
+
+
+<button @click="addMore()">Add Row.</button>
+<br />
+<br />
+<iframe v-for="iteration in generateList()" width="600" height="600" src="https://thiscatdoesnotexist.com">
+</iframe>
+
+
+<br /><br />
+
+<button @click="addMore()">Add Row.</button>
+
+
+</div>
+
+<script>
+
+var vueApp = new Vue({
+	el: '#xVue',
+	data: {
+		someData: 'xyz',
+		perRow: 2,
+		total: 2,
+		theList: []
+	},
+	methods: {
+		generateList: function() {
+			//let list = [];
+			let me = this;
+			let startedLength = this.theList.length;
+			if (this.theList.length < this.total) {
+				for(let i = startedLength; i < this.total; i++) 
+				{
+					
+					(function(i) 
+					{
+						setTimeout(() => 
+						{ 
+							if (me.theList.length < me.total) 
+							{ 	
+								console.log(i);
+								me.theList.push(i); 
+							} 
+						}, (i * 1500));
+					}
+					)(i);
+				}
+			}
+			return this.theList;
+		
+		},
+		addMore: function() {			
+			this.total += this.perRow;
+		}
+	}
+});
+
+</script>
+
+</body>
+</html>
