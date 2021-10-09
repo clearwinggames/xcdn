@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test</title>
+  </head>
+  <body>
+    Hello world
+
+<script src="https://clearwinggames.github.io/xcdn/three.js">
+    </script>
+    
+    <script src="https://clearwinggames.github.io/xcdn/examplethree.js">
+    </script>
+   
+   <div id='canvasDiv' onclick='this.requestFullscreen();'  style='position: absolute; text-align: center; width: 800; height: 600'><canvas id='threeCanvas' style='position: absolute; display: block; margin: auto; width: 100%; height: 100%; top: 0; left: 0; z-index:40;' onclick=''></canvas></div>
+   
+   <img id="stTl" src="http://cwg.dyndns-home.com/Pages/TempImages/stTl.png" style="display: none;" />
+   <img id="water1" src="http://cwg.dyndns-home.com/Pages/TempImages/water1.png" style="display: none;" />
+   <img id="water2" src="http://cwg.dyndns-home.com/Pages/TempImages/water2.png" style="display: none;" />
+   <img id="water3" src="http://cwg.dyndns-home.com/Pages/TempImages/water3.png" style="display: none;" />
+   <img id="water4" src="http://cwg.dyndns-home.com/Pages/TempImages/water4.png" style="display: none;" />
+   <img id="water5" src="http://cwg.dyndns-home.com/Pages/TempImages/water5.png" style="display: none;" />
+   <img id="water6" src="http://cwg.dyndns-home.com/Pages/TempImages/water6.png" style="display: none;" />
+   <img id="water7" src="http://cwg.dyndns-home.com/Pages/TempImages/water7.png" style="display: none;" />
+   <img id="water8" src="http://cwg.dyndns-home.com/Pages/TempImages/water8.png" style="display: none;" />
+   <img id="water9" src="http://cwg.dyndns-home.com/Pages/TempImages/water9.png" style="display: none;" />
+   <img id="water10" src="http://cwg.dyndns-home.com/Pages/TempImages/water10.png" style="display: none;" />
+   <img id="water11" src="http://cwg.dyndns-home.com/Pages/TempImages/water11.png" style="display: none;" />
+   <img id="water12" src="http://cwg.dyndns-home.com/Pages/TempImages/water12.png" style="display: none;" />
+   <img id="water13" src="http://cwg.dyndns-home.com/Pages/TempImages/water13.png" style="display: none;" />
+   <img id="water14" src="http://cwg.dyndns-home.com/Pages/TempImages/water14.png" style="display: none;" />
+   <img id="water15" src="http://cwg.dyndns-home.com/Pages/TempImages/water15.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stTl" src="http://cwg.dyndns-home.com/Pages/TempImages/stTl.png" style="display: none;" />
+   <img id="water1" src="http://cwg.dyndns-home.com/Pages/TempImages/water1.png" style="display: none;" />
+   <img id="water2" src="http://cwg.dyndns-home.com/Pages/TempImages/water2.png" style="display: none;" />
+   <img id="water3" src="http://cwg.dyndns-home.com/Pages/TempImages/water3.png" style="display: none;" />
+   <img id="water4" src="http://cwg.dyndns-home.com/Pages/TempImages/water4.png" style="display: none;" />
+   <img id="water5" src="http://cwg.dyndns-home.com/Pages/TempImages/water5.png" style="display: none;" />
+   <img id="water6" src="http://cwg.dyndns-home.com/Pages/TempImages/water6.png" style="display: none;" />
+   <img id="water7" src="http://cwg.dyndns-home.com/Pages/TempImages/water7.png" style="display: none;" />
+   <img id="water8" src="http://cwg.dyndns-home.com/Pages/TempImages/water8.png" style="display: none;" />
+   <img id="water9" src="http://cwg.dyndns-home.com/Pages/TempImages/water9.png" style="display: none;" />
+   <img id="water10" src="http://cwg.dyndns-home.com/Pages/TempImages/water10.png" style="display: none;" />
+   <img id="water11" src="http://cwg.dyndns-home.com/Pages/TempImages/water11.png" style="display: none;" />
+   <img id="water12" src="http://cwg.dyndns-home.com/Pages/TempImages/water12.png" style="display: none;" />
+   <img id="water13" src="http://cwg.dyndns-home.com/Pages/TempImages/water13.png" style="display: none;" />
+   <img id="water14" src="http://cwg.dyndns-home.com/Pages/TempImages/water14.png" style="display: none;" />
+   <img id="water15" src="http://cwg.dyndns-home.com/Pages/TempImages/water15.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stTl" src="http://cwg.dyndns-home.com/Pages/TempImages/stTl.png" style="display: none;" />
+   <img id="water1" src="http://cwg.dyndns-home.com/Pages/TempImages/water1.png" style="display: none;" />
+   <img id="water2" src="http://cwg.dyndns-home.com/Pages/TempImages/water2.png" style="display: none;" />
+   <img id="water3" src="http://cwg.dyndns-home.com/Pages/TempImages/water3.png" style="display: none;" />
+   <img id="water4" src="http://cwg.dyndns-home.com/Pages/TempImages/water4.png" style="display: none;" />
+   <img id="water5" src="http://cwg.dyndns-home.com/Pages/TempImages/water5.png" style="display: none;" />
+   <img id="water6" src="http://cwg.dyndns-home.com/Pages/TempImages/water6.png" style="display: none;" />
+   <img id="water7" src="http://cwg.dyndns-home.com/Pages/TempImages/water7.png" style="display: none;" />
+   <img id="water8" src="http://cwg.dyndns-home.com/Pages/TempImages/water8.png" style="display: none;" />
+   <img id="water9" src="http://cwg.dyndns-home.com/Pages/TempImages/water9.png" style="display: none;" />
+   <img id="water10" src="http://cwg.dyndns-home.com/Pages/TempImages/water10.png" style="display: none;" />
+   <img id="water12" src="http://cwg.dyndns-home.com/Pages/TempImages/water12.png" style="display: none;" />
+   <img id="water11" src="http://cwg.dyndns-home.com/Pages/TempImages/water11.png" style="display: none;" />
+   <img id="water13" src="http://cwg.dyndns-home.com/Pages/TempImages/water13.png" style="display: none;" />
+   <img id="water14" src="http://cwg.dyndns-home.com/Pages/TempImages/water14.png" style="display: none;" />
+   <img id="water15" src="http://cwg.dyndns-home.com/Pages/TempImages/water15.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stTl" src="http://cwg.dyndns-home.com/Pages/TempImages/stTl.png" style="display: none;" />
+   <img id="water1" src="http://cwg.dyndns-home.com/Pages/TempImages/water1.png" style="display: none;" />
+   <img id="water2" src="http://cwg.dyndns-home.com/Pages/TempImages/water2.png" style="display: none;" />
+   <img id="water3" src="http://cwg.dyndns-home.com/Pages/TempImages/water3.png" style="display: none;" />
+   <img id="water4" src="http://cwg.dyndns-home.com/Pages/TempImages/water4.png" style="display: none;" />
+   <img id="water5" src="http://cwg.dyndns-home.com/Pages/TempImages/water5.png" style="display: none;" />
+   <img id="water6" src="http://cwg.dyndns-home.com/Pages/TempImages/water6.png" style="display: none;" />
+   <img id="water7" src="http://cwg.dyndns-home.com/Pages/TempImages/water7.png" style="display: none;" />
+   <img id="water8" src="http://cwg.dyndns-home.com/Pages/TempImages/water8.png" style="display: none;" />
+   <img id="water9" src="http://cwg.dyndns-home.com/Pages/TempImages/water9.png" style="display: none;" />
+   <img id="water10" src="http://cwg.dyndns-home.com/Pages/TempImages/water10.png" style="display: none;" />
+   <img id="water11" src="http://cwg.dyndns-home.com/Pages/TempImages/water11.png" style="display: none;" />
+   <img id="water12" src="http://cwg.dyndns-home.com/Pages/TempImages/water12.png" style="display: none;" />
+   <img id="water13" src="http://cwg.dyndns-home.com/Pages/TempImages/water13.png" style="display: none;" />
+   <img id="water14" src="http://cwg.dyndns-home.com/Pages/TempImages/water14.png" style="display: none;" />
+   <img id="water15" src="http://cwg.dyndns-home.com/Pages/TempImages/water15.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stTl" src="http://cwg.dyndns-home.com/Pages/TempImages/stTl.png" style="display: none;" />
+   <img id="water1" src="http://cwg.dyndns-home.com/Pages/TempImages/water1.png" style="display: none;" />
+   <img id="water2" src="http://cwg.dyndns-home.com/Pages/TempImages/water2.png" style="display: none;" />
+   <img id="water3" src="http://cwg.dyndns-home.com/Pages/TempImages/water3.png" style="display: none;" />
+   <img id="water4" src="http://cwg.dyndns-home.com/Pages/TempImages/water4.png" style="display: none;" />
+   <img id="water5" src="http://cwg.dyndns-home.com/Pages/TempImages/water5.png" style="display: none;" />
+   <img id="water6" src="http://cwg.dyndns-home.com/Pages/TempImages/water6.png" style="display: none;" />
+   <img id="water7" src="http://cwg.dyndns-home.com/Pages/TempImages/water7.png" style="display: none;" />
+   <img id="water8" src="http://cwg.dyndns-home.com/Pages/TempImages/water8.png" style="display: none;" />
+   <img id="water9" src="http://cwg.dyndns-home.com/Pages/TempImages/water9.png" style="display: none;" />
+   <img id="water10" src="http://cwg.dyndns-home.com/Pages/TempImages/water10.png" style="display: none;" />
+   <img id="water11" src="http://cwg.dyndns-home.com/Pages/TempImages/water11.png" style="display: none;" />
+   <img id="water12" src="http://cwg.dyndns-home.com/Pages/TempImages/water12.png" style="display: none;" />
+   <img id="water13" src="http://cwg.dyndns-home.com/Pages/TempImages/water13.png" style="display: none;" />
+   <img id="water14" src="http://cwg.dyndns-home.com/Pages/TempImages/water14.png" style="display: none;" />
+   <img id="water15" src="http://cwg.dyndns-home.com/Pages/TempImages/water15.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stTl" src="http://cwg.dyndns-home.com/Pages/TempImages/stTl.png" style="display: none;" />
+   <img id="water1" src="http://cwg.dyndns-home.com/Pages/TempImages/water1.png" style="display: none;" />
+   <img id="water2" src="http://cwg.dyndns-home.com/Pages/TempImages/water2.png" style="display: none;" />
+   <img id="water3" src="http://cwg.dyndns-home.com/Pages/TempImages/water3.png" style="display: none;" />
+   <img id="water4" src="http://cwg.dyndns-home.com/Pages/TempImages/water4.png" style="display: none;" />
+   <img id="water5" src="http://cwg.dyndns-home.com/Pages/TempImages/water5.png" style="display: none;" />
+   <img id="water6" src="http://cwg.dyndns-home.com/Pages/TempImages/water6.png" style="display: none;" />
+   <img id="water7" src="http://cwg.dyndns-home.com/Pages/TempImages/water7.png" style="display: none;" />
+   <img id="water8" src="http://cwg.dyndns-home.com/Pages/TempImages/water8.png" style="display: none;" />
+   <img id="water9" src="http://cwg.dyndns-home.com/Pages/TempImages/water9.png" style="display: none;" />
+   <img id="water10" src="http://cwg.dyndns-home.com/Pages/TempImages/water10.png" style="display: none;" />
+   <img id="water11" src="http://cwg.dyndns-home.com/Pages/TempImages/water11.png" style="display: none;" />
+   <img id="water12" src="http://cwg.dyndns-home.com/Pages/TempImages/water12.png" style="display: none;" />
+   <img id="water13" src="http://cwg.dyndns-home.com/Pages/TempImages/water13.png" style="display: none;" />
+   <img id="water14" src="http://cwg.dyndns-home.com/Pages/TempImages/water14.png" style="display: none;" />
+   <img id="water15" src="http://cwg.dyndns-home.com/Pages/TempImages/water15.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" />
+   <img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" /><img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" /><img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" /><img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" /><img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" /><img id="stW" src="http://cwg.dyndns-home.com/Pages/TempImages/stW.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="altquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad1.png" style="display: none;" /><img id="altquad2" src="http://cwg.dyndns-home.com/Pages/TempImages/altquad2.png" style="display: none;" /><img id="floorquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorquad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorQuad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorquad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorQuad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorquad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorQuad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorquad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorquad1.png" style="display: none;" /><img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" /><img id="floorQuad1" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad1.png" style="display: none;" />
+   <img id="floorQuad2" src="http://cwg.dyndns-home.com/Pages/TempImages/floorQuad2.png" style="display: none;" />
+  </body>
+</html>
+
