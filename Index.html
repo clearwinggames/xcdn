@@ -10,6 +10,8 @@
   <div id="vueApp">
 {{ message }}
 	  
+<br />C?: <component :is="compiled"></component><br />
+	  
 <my-component></my-component>
 </div>
   <div id="output">
@@ -76,15 +78,19 @@ Vue.component('my-component', {
 		},
 		jsxAsHtml: function(jsxObject) {
 			return jsxObject.outerHTML;
+		},
+		compile: function() {
+			app.compiled = Vue.compile('<my-component></my-component>');
 		}
 	},
-	template: '<div>MyComponent Is: <span v-html="jsxAsHtml(getJSX())"></span>  </div>'
+	template: '<div>MyComponent Is: <span v-html="jsxAsHtml(getJSX())"></span>  <button @click="compile()">comp</button></div>'
 });
 
 var app = new Vue({
   el: '#vueApp',
   data: {
-    message: 'Hello Vue!'
+    message: 'Hello Vue!',
+    compiled = null
   }
 });
 
