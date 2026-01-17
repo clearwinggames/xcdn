@@ -1,0 +1,37 @@
+      function run(options) {
+            if (alreadyRunning) {
+                $("#btn_start").attr("disabled", "disabled").blur();
+                $("#btn_pause").removeAttr("disabled").blur();
+                halfix.pause(false);
+                halfix.run();
+                return;
+            }
+            alreadyRunning = true;
+            $("#btn_start").attr("disabled", "disabled").blur();
+            $("#btn_pause").removeAttr("disabled").blur();
+            $("#btn_ctrlaltdel").removeAttr("disabled");
+            if (!halfix) {
+                halfix = new Halfix(options);
+
+                halfix.init(function() {
+                    if (savestate)
+                        halfix.loadStateXHR(savestate, function() {
+                            halfix.run();
+                        });
+                    else
+                        halfix.run();
+                });
+            } else {
+                halfix.pause(false);
+                halfix.run();
+            }
+        }
+		
+		
+/* 
+
+halfix = new Halfix(options);
+
+halfix.run();
+
+*/
