@@ -354,7 +354,11 @@
                 pb = $("#pb")[0];
             opts.onprogress = function(file, cur, tot) {
                 pbt.html(file);
+				try {
                 pb.setAttribute("value", (cur / tot * 100) | 0);
+				}
+				catch (err) {
+				}
             };
 
             var letters = ["a", "b", "c", "d"];
