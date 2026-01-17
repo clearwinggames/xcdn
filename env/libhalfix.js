@@ -848,7 +848,8 @@
 		
 		let path = join_path(arg, "info.dat");
 		
-		path = location.origin + "/api/content/" + arg + "/info.dat";
+//		path = location.origin + "/api/content/" + arg + "/info.dat";
+		path = location.origin + "/xcdn/env/" + arg + "/info.dat";
 
         loadFiles([path], function (err, data) {
             if (err) throw err;
