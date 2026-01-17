@@ -23,7 +23,8 @@
         this.image_data = null;
 
         this.config = this.buildConfiguration();
-
+		
+		this.onprogress = options["onprogress"] || function (a, b, c) { };
        // this.onprogress = null;//options["onprogress"] || function (a, b, c) { };
     }
 
