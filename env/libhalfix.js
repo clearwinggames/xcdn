@@ -24,7 +24,7 @@
 
         this.config = this.buildConfiguration();
 
-        this.onprogress = null;//options["onprogress"] || function (a, b, c) { };
+       // this.onprogress = null;//options["onprogress"] || function (a, b, c) { };
     }
 
     var _cache = [];
