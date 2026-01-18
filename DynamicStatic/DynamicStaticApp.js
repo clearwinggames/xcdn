@@ -23,7 +23,7 @@ Vue.component('recursive-vue-app',
   template: `
   <div>
   	<div v-if="structure != null">
-  	 <div v-for="entry in structure">
+  	 <div v-for="entry in structure.entries">
 	 	{{ entry.title }}
 	 </div>
     </div>
@@ -71,3 +71,4 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
