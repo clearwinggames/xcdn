@@ -1,6 +1,6 @@
 Vue.component('recursive-vue-app',
 {
-  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject'],
+  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'router'],
   data: function () {
     return {
         structure: null,
@@ -76,6 +76,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
