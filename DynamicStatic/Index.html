@@ -6,11 +6,16 @@
 </head>
 <body>
 <div id="app">
+  <router-view></router-view>
 <recursive-vue-app structure-url="./main.json" />
 </div>
 <script>
+  
+Vue.use(VueRouter);
+  
 const routes = [
-  { path: '/First', component: { template: '<div>Home Page</div>' } },
+    { path: '/', component: { template: '<div>Home Page</div>' } },
+  { path: '/First', component: { template: '<div>Cool Page</div>' } },
   { path: '/Second', component: { template: '<div>About Page</div>' } },
   { path: '/Third', component: { template: '<div>Whatever</div>' } }
 ];
@@ -29,4 +34,5 @@ data: {
 </script>
 </body>
 </html>
+
 
