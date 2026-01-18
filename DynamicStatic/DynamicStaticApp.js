@@ -1,16 +1,13 @@
-//hit: alert('yo');
 
-/* todo: make vue2 component 'dynamic static app' */
 Vue.component('recursive-vue-app',
 {
   props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject'],
   data: function () {
     return {
-      message2: 'Hello from the newer component!'
+      
     }
   },
   mounted: function() { 
-	//works: alert('x');  
 	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
 		// go get the structure object 
 		httpGet(this.structureUrl).then(x => {
@@ -22,7 +19,7 @@ Vue.component('recursive-vue-app',
   },
   methods: {
   },
-  template: '<div><h3>{{ message2 }}</h3></div>'
+  template: '<div><h3>Placeholder</h3></div>'
 });
 
 
@@ -67,4 +64,5 @@ function httpGet(url)
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send();
   });
+
 }
