@@ -22,7 +22,7 @@ Vue.component('recursive-vue-app',
   },
   methods: {
 	  getVueApp: function() {
-		  return this.$root.$refs.vue;
+		  return this.$root.$refs;
 	  }
   },
   template: `
@@ -76,6 +76,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
