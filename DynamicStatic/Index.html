@@ -1,6 +1,7 @@
 <html>
 <head>
 <script src="./vue2.js"></script>
+<script src="./vueRouter.js"></script>
 <script src="./DynamicStaticApp.js"></script>
 </head>
 <body>
@@ -8,8 +9,19 @@
 <recursive-vue-app structure-url="./main.json" />
 </div>
 <script>
+const routes = [
+  { path: '/First', component: { template: '<div>Home Page</div>' } },
+  { path: '/Second', component: { template: '<div>About Page</div>' } },
+  { path: '/Third', component: { template: '<div>Whatever</div>' } }
+];
+
+const router = new VueRouter({
+  routes
+});
+  
 var app = new Vue
 ({
+router,
 el: '#app',
 data: {
 }
@@ -17,3 +29,4 @@ data: {
 </script>
 </body>
 </html>
+
