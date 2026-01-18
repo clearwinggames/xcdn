@@ -9,7 +9,7 @@ Vue.component('recursive-vue-app',
   },
   mounted: function() { 
 //	  let app = .app;
-	  alert(Object.keys(router));
+	  alert(Object.keys(this.getVueApp());
 	  let me = this;
 	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
 		// go get the structure object 
@@ -21,6 +21,9 @@ Vue.component('recursive-vue-app',
   computed: {
   },
   methods: {
+	  getVueApp: function() {
+		  return this.$root.$refs.vue;
+	  }
   },
   template: `
   <div>
@@ -73,6 +76,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
