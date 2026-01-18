@@ -24,7 +24,7 @@ Vue.component('recursive-vue-app',
   <div>
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
-	 	{{ entry.title }}
+	 	<a :href="entry.route">{{ entry.title }}</a>
 	 </div>
     </div>
   </div>`
@@ -71,4 +71,5 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
