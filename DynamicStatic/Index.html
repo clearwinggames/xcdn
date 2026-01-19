@@ -14,10 +14,10 @@
 Vue.use(VueRouter);
   
 const routes = [
-    { path: '/', component: { template: '<div>Home Page</div>' }, beforeEnter() { console.log('enter'); } },
-    { path: '/First', component: { template: '<div>Cool Page</div>' }, beforeEnter() { console.log('enter first'); } },
-  { path: '/Second', component: { template: '<div>Another Page</div>' }, beforeEnter() { console.log('enter second'); } },
-  { path: '/Third', component: { template: '<div>Final Page</div>' }, beforeEnter() { console.log('enter third'); } }
+    { path: '/', component: { template: '<div>Home Page</div>' } },
+    { path: '/First', component: { template: '<div>Cool Page</div>' } },
+  { path: '/Second', component: { template: '<div>Another Page</div>' } },
+  { path: '/Third', component: { template: '<div>Final Page</div>' } }
 ];
 
 var router = new VueRouter({
@@ -35,6 +35,7 @@ data: {
 </script>
 </body>
 </html>
+
 
 
 
