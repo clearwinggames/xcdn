@@ -10,12 +10,12 @@ Vue.component('recursive-vue-app',
   },
   mounted: function() { 
     let me = this;
-	let levelName = this.getLevelName();
 	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
 		// go get the structure object 
 		httpGet(this.structureUrl).then(x => {
 			me.structure = JSON.parse(x);
 	        me.name = me.structure.name;
+			let levelName = me.getLevelName();
 			for (let i = 0; i < me.structure.entries.length; i++)
 			{
 				let templ = me.structure.entries[i].template;
@@ -30,9 +30,6 @@ Vue.component('recursive-vue-app',
 					components: { [levelName]: { template: templ } } 
 					//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
 				   });
-					
-				
-
 			}
 		});
 	}
@@ -110,6 +107,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
