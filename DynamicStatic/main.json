@@ -13,7 +13,7 @@
 		"title": "SecondOne",
 		"route": "/SecondOne",
 		"target": "second.json",
-		"template": "<div>Here is the second</div>",
+		"template": "<div>Here is the second<div>{{ recurse }}</div></div>",
 		"view": {
 			"name": "",
 			"path": ""
@@ -31,6 +31,7 @@
 	]
 
 }
+
 
 
 
