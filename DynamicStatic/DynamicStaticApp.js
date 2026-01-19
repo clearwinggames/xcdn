@@ -62,7 +62,7 @@ Vue.component('recursive-vue-app',
   	 <div v-for="entry in structure.entries">
 	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
 	 </div>
-	 <div v-if="levelName != null && levelName.length > 0'"> 
+	 <div v-if="levelName != null && levelName.length > 0"> 
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
     </div>
@@ -110,3 +110,4 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
