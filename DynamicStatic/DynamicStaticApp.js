@@ -51,9 +51,9 @@ Vue.component('recursive-vue-app',
 	  },
 	  singleSlash: function(urlStart, urlEnd)
 	  {
-		  if ((urlStart.endsWith('//') && !urlEnd.startsWith('//')) || (!urlStart.endsWith('//') && urlEnd.startsWith('//'))) return urlStart + urlEnd;
-		  else if (urlStart.endsWith('//') && urlEnd.startsWith('//')) return urlStart.trimEnd('//') + urlEnd;
-		  return urlStart + '//' + urlEnd;  
+		  if ((urlStart.endsWith('/') && !urlEnd.startsWith('/')) || (!urlStart.endsWith('/') && urlEnd.startsWith('/'))) return urlStart + urlEnd;
+		  else if (urlStart.endsWith('/') && urlEnd.startsWith('/')) return urlStart.trimEnd('/') + urlEnd;
+		  return urlStart + '/' + urlEnd;  
 	  }
   },
   template: `
@@ -110,6 +110,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
