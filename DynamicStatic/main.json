@@ -3,6 +3,7 @@
 	{
 		"title": "FirstOne",
 		"route": "/FirstOne",
+		"template": "",
 		"view": {
 			"name": "",
 			"path": ""
@@ -11,6 +12,7 @@
 	{
 		"title": "SecondOne",
 		"route": "/SecondOne",
+		"template": "",
 		"view": {
 			"name": "",
 			"path": ""
@@ -19,6 +21,7 @@
 	{
 		"title": "ThirdOne",
 		"route": "/ThirdOne",
+		"template": "",
 		"view": {
 			"name": "",
 			"path": ""
@@ -27,6 +30,7 @@
 	]
 
 }
+
 
 
 
