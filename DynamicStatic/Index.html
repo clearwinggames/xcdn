@@ -14,8 +14,8 @@
 Vue.use(VueRouter);
   
 const routes = [
-    { path: '/', component: { template: '<div>Home Page</div>' } },
-    { path: '/First', component: { template: '<div>Cool Page</div>' } }
+    { path: '/', name: 'main', component: { template: '<div>Home Page</div>' } },
+    { path: '/First', name: 'main', component: { template: '<div>Cool Page</div>' } }
 ];
 
 var router = new VueRouter({
@@ -33,6 +33,7 @@ data: {
 </script>
 </body>
 </html>
+
 
 
 
