@@ -20,11 +20,12 @@ Vue.component('recursive-vue-app',
 			{
 				let templ = me.structure.entries[i].template;
 				if (templ == null || templ.length == 0) templ = `<div>Autofilled: ${me.structure.entries[i].title}</div>`;
-				if (typeof me.structure.entries[i] != 'undefined' && me.structure.entries[i].target != null && me.structure.entries[i].target.length > 0)
+				if (typeof me.structure.entries[i].target != 'undefined' && me.structure.entries[i].target != null && me.structure.entries[i].target.length > 0)
 				{  
 					// modify templ     structure-url="./main.json" :router="router_hub"
-					templ = templ.replace('{{ recurse }}', `<recursive-view-app structure-url='${me.structure.entries[i].target}' :router='${me.router}' />`);
-				}
+					templ = templ.replace('{{ recurse }}', `<recursive-view-app structure-url='${me.structure.entries[i].target}' />`);
+				}   // how can we pass the router through this way?  Seems not straightforward...
+				
 					me.router.addRoute({ path: me.structure.entries[i].route, 
 					components: { [levelName]: { template: templ } } 
 					//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
@@ -103,6 +104,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
