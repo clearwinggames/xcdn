@@ -48,13 +48,19 @@ Vue.component('recursive-vue-app',
 		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
 		  else if (this.name != null && this.name.length > 0) return this.name;
 		  return 'unnamed';
+	  },
+	  singleSlash: function(urlStart, urlEnd)
+	  {
+		  if ((urlStart.endsWith('//') && !urlEnd.startsWith('//')) || (!urlStart.endsWith('//') && urlEnd.startsWith('//'))) return urlStart + urlEnd;
+		  else if (urlStart.endsWith('//') && urlEnd.startsWith('//')) return urlStart.trimEnd('//') + urlEnd;
+		  return urlStart + '//' + urlEnd;  
 	  }
   },
   template: `
   <div>
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
-	 	<a :href="location.href + entry.title">{{ entry.title }}</a>
+	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
 	 </div>
 	 <div> 
 	     <router-view :name="getLevelName()"></router-view>
@@ -104,6 +110,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
