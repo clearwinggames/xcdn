@@ -10,6 +10,7 @@ Vue.component('recursive-vue-app',
   },
   mounted: function() { 
     let me = this;
+	let levelName = this.getLevelName();
 	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
 		// go get the structure object 
 		httpGet(this.structureUrl).then(x => {
@@ -18,7 +19,7 @@ Vue.component('recursive-vue-app',
 			for (let i = 0; i < me.structure.entries.length; i++)
 			{
 				me.router.addRoute({ path: me.structure.entries[i].route, 
-									components: { [me.getLevelName]: { template: '<div>Temptest</div>' } } 
+									components: { [levelName]: { template: '<div>Temptest</div>' } } 
 									//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
 								   });
 			}
@@ -91,6 +92,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
