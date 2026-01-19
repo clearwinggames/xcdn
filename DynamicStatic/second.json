@@ -4,7 +4,7 @@
 	{
 		"title": "Some",
 		"route": "/Some",
-		"template": "",
+		"template": "<div>Some?</div>",
 		"view": {
 			"name": "",
 			"path": ""
@@ -13,7 +13,7 @@
 	{
 		"title": "More",
 		"route": "/More",
-		"template": "",
+		"template": "<div>More?</div>",
 		"view": {
 			"name": "",
 			"path": ""
