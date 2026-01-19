@@ -19,7 +19,7 @@ Vue.component('recursive-vue-app',
 			for (let i = 0; i < me.structure.entries.length; i++)
 			{
 				me.router.addRoute({ path: me.structure.entries[i].route, 
-									components: { [levelName]: { template: '<div>Temptest</div>' } } 
+									components: { [levelName]: { template: `<div>Temptest (${levelName})</div>` } } 
 									//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
 								   });
 			}
@@ -93,6 +93,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
