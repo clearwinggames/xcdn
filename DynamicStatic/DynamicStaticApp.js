@@ -1,10 +1,11 @@
 Vue.component('recursive-vue-app',
 {
-  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'router'],
+  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'levelName', 'router'],
   data: function () {
     return {
         structure: null,
-		data: null
+		data: null,
+		name: null
     }
   },
   mounted: function() { 
@@ -22,6 +23,11 @@ Vue.component('recursive-vue-app',
 	}
   },
   computed: {
+	  getLevelName: function() {
+		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
+		  else if (this.name != null && this.name.length > 0) return this.name;
+		  return 'unnamed';
+	  }
   },
   methods: {
 	  getVueApp: function() {
@@ -33,6 +39,9 @@ Vue.component('recursive-vue-app',
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
 	 	<a :href="location.href + entry.title">{{ entry.title }}</a>
+	 </div>
+	 <div> 
+	     <router-view :name="getLevelName()"></router-view>
 	 </div>
     </div>
   </div>`
@@ -79,6 +88,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
