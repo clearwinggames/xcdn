@@ -16,6 +16,9 @@ Vue.component('recursive-vue-app',
 			me.structure = JSON.parse(x);
 	        me.name = me.structure.name;
 			let levelName = me.getLevelName();
+			
+			console.log('Got: Level name - ' + levelName);
+			
 			for (let i = 0; i < me.structure.entries.length; i++)
 			{
 				let templ = me.structure.entries[i].template;
@@ -25,7 +28,7 @@ Vue.component('recursive-vue-app',
 					// modify templ     structure-url="./main.json" :router="router_hub"
 					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" :router="${me.routerPath}" />`);
 				}   // how can we pass the router through this way?  Seems not straightforward...
-				
+				console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);
 					me.router.addRoute({ path: me.structure.entries[i].route, 
 					components: { [levelName]: { template: templ } } 
 					//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
@@ -107,6 +110,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
