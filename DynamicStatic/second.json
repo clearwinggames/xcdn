@@ -1,0 +1,22 @@
+{
+  "name": "LevelTwo",
+	"entries": [
+	{
+		"title": "Some",
+		"route": "/Some",
+		"view": {
+			"name": "",
+			"path": ""
+		}
+	},
+	{
+		"title": "More",
+		"route": "/More",
+		"view": {
+			"name": "",
+			"path": ""
+		}
+	}
+	]
+
+}
