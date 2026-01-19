@@ -3,7 +3,7 @@
 	"entries": [
 	{
 		"title": "Some",
-		"route": "/Some",
+		"route": "/SecondOne/Some",
 		"template": "<div>Some?</div>",
 		"view": {
 			"name": "",
@@ -12,7 +12,7 @@
 	},
 	{
 		"title": "More",
-		"route": "/More",
+		"route": "/SecondOne/More",
 		"template": "<div>More?</div>",
 		"view": {
 			"name": "",
