@@ -15,7 +15,7 @@ Vue.component('recursive-vue-app',
 		// go get the structure object 
 		httpGet(this.structureUrl).then(x => {
 			me.structure = JSON.parse(x);
-	        me.name = structure.name;
+	        me.name = me.structure.name;
 			for (let i = 0; i < me.structure.entries.length; i++)
 			{
 				let templ = me.structure.entries[i].template;
@@ -95,6 +95,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
