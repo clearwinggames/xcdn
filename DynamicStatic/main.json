@@ -2,7 +2,7 @@
 	"entries": [
 	{
 		"title": "FirstOne",
-		"route": "FirstOne",
+		"route": "/FirstOne",
 		"view": {
 			"name": "",
 			"path": ""
@@ -10,7 +10,7 @@
 	},
 	{
 		"title": "SecondOne",
-		"route": "SecondOne",
+		"route": "/SecondOne",
 		"view": {
 			"name": "",
 			"path": ""
@@ -18,7 +18,7 @@
 	},
 	{
 		"title": "ThirdOne",
-		"route": "ThirdOne",
+		"route": "/ThirdOne",
 		"view": {
 			"name": "",
 			"path": ""
@@ -27,6 +27,7 @@
 	]
 
 }
+
 
 
 
