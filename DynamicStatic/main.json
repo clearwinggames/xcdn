@@ -3,7 +3,7 @@
 	{
 		"title": "FirstOne",
 		"route": "/FirstOne",
-		"template": "",
+		"template": "<div>Here is the first one</div>",
 		"view": {
 			"name": "",
 			"path": ""
@@ -12,7 +12,7 @@
 	{
 		"title": "SecondOne",
 		"route": "/SecondOne",
-		"template": "",
+		"template": "<div>Here is the second</div>",
 		"view": {
 			"name": "",
 			"path": ""
@@ -21,7 +21,7 @@
 	{
 		"title": "ThirdOne",
 		"route": "/ThirdOne",
-		"template": "",
+		"template": "<div>This is the third one</div>",
 		"view": {
 			"name": "",
 			"path": ""
@@ -30,6 +30,7 @@
 	]
 
 }
+
 
 
 
