@@ -10,7 +10,7 @@ Vue.component('recursive-vue-app',
   },
   mounted: function() { 
     let me = this;
-	let levelName = this.getLevelName;
+	let levelName = this.getLevelName();
 	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
 		// go get the structure object 
 		httpGet(this.structureUrl).then(x => {
@@ -27,15 +27,16 @@ Vue.component('recursive-vue-app',
 	}
   },
   computed: {
-	  getLevelName: function() {
-		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
-		  else if (this.name != null && this.name.length > 0) return this.name;
-		  return 'unnamed';
-	  }
+
   },
   methods: {
 	  getVueApp: function() {
 		  return this.$root;
+	  },
+	  getLevelName: function() {
+		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
+		  else if (this.name != null && this.name.length > 0) return this.name;
+		  return 'unnamed';
 	  }
   },
   template: `
@@ -92,6 +93,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
