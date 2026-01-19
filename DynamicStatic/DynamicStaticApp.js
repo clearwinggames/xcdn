@@ -32,7 +32,7 @@ Vue.component('recursive-vue-app',
   <div>
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
-	 	<a :href="location.href + entry.route">{{ entry.title }}</a>
+	 	<a :href="(location.href + entry.route).replace'//', '/');">{{ entry.title }}</a>
 	 </div>
     </div>
   </div>`
@@ -79,6 +79,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
