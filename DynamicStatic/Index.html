@@ -6,11 +6,15 @@
 </head>
 <body>
 <div id="app">
-  <router-view name="alt"></router-view>
-<recursive-vue-app structure-url="./main.json" :router="router_hub" />
-</div>
-<div>
-    <router-view></router-view>
+  <div>
+    <router-view name="alt"></router-view>
+  </div>
+  <div>
+    <recursive-vue-app structure-url="./main.json" :router="router_hub" />
+  </div>
+  <div>
+      <router-view></router-view>
+  </div>
 </div>
 <script>
   
@@ -38,6 +42,7 @@ data: {
 </script>
 </body>
 </html>
+
 
 
 
