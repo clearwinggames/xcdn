@@ -15,11 +15,13 @@ Vue.component('recursive-vue-app',
 		// go get the structure object 
 		httpGet(this.structureUrl).then(x => {
 			me.structure = JSON.parse(x);
-
+	        me.name = structure.name;
 			for (let i = 0; i < me.structure.entries.length; i++)
 			{
+				let templ = me.structure.entries[i].template;
+				if (templ == null || templ.length == 0) templ = `<div>Autofilled: ${me.structure.entries[i].title}</div>`;
 				me.router.addRoute({ path: me.structure.entries[i].route, 
-									components: { [levelName]: { template: `<div>Temptest (${levelName})</div>` } } 
+									components: { [levelName]: { template: templ } } 
 									//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
 								   });
 			}
@@ -93,6 +95,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
