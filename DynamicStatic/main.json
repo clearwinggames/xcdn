@@ -12,6 +12,7 @@
 	{
 		"title": "SecondOne",
 		"route": "/SecondOne",
+		"target": "second.json",
 		"template": "<div>Here is the second</div>",
 		"view": {
 			"name": "",
@@ -30,6 +31,7 @@
 	]
 
 }
+
 
 
 
