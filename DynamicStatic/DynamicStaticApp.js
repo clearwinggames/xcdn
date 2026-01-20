@@ -27,7 +27,7 @@ Vue.component('recursive-vue-app',
 				if (typeof me.structure.entries[i].target != 'undefined' && me.structure.entries[i].target != null && me.structure.entries[i].target.length > 0)
 				{  					
 					// modify templ     structure-url="./main.json" :router="router_hub"
-					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" parent-level-name="${me.levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
+					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" parent-level-name="${levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
 
 					// let's have an extra parameter for our route here!  path/:whatever/		
 					if (me.parentLevelName != null && me.parentLevelName.length > 0)
@@ -149,6 +149,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
