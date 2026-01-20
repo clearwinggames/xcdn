@@ -29,21 +29,37 @@ Vue.component('recursive-vue-app',
 					// modify templ     structure-url="./main.json" :router="router_hub"
 					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" parent-level-name="${me.levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
 
-					// let's have an extra parameter for our route here!  path/:whatever/					
-					me.router.addRoute
-					({ 
-						path: me.structure.entries[i].route + "/:extra", 
-						components: { [levelName]: { template: templ } } 
-				   }); // instead of this, we should add child routes to existing routes... 
+					// let's have an extra parameter for our route here!  path/:whatever/		
+					if (this.parentLevelName != null && this.parentLevelName.length > 0)
+					{
+						// find the route a level down from here and add the new one to it as a child route
+						
+					}
+					else
+					{
+						me.router.addRoute
+						({ 
+							path: me.structure.entries[i].route + "/:extra", 
+							components: { [levelName]: { template: templ } } 
+					   }); // instead of this, we should add child routes to existing routes... 
+					}
 					
 				}   // how can we pass the router through this way?  Seems not straightforward...
-				console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);				
-				me.router.addRoute
-				({ 
-					path: me.structure.entries[i].route, 
-					components: { [levelName]: { template: templ } } 
-					//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
-				});
+				console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);		
+				if (this.parentLevelName != null && this.parentLevelName.length > 0)
+				{
+					// find the route a level down from here and add the new one to it as a child route
+					
+				}
+				else
+				{
+					me.router.addRoute
+					({ 
+						path: me.structure.entries[i].route, 
+						components: { [levelName]: { template: templ } } 
+						//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
+					});
+				}
 				me.routeLoaded = true;
 			}
 		});
@@ -126,6 +142,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
