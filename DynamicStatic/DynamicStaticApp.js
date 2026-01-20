@@ -30,10 +30,10 @@ Vue.component('recursive-vue-app',
 					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" parent-level-name="${me.levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
 
 					// let's have an extra parameter for our route here!  path/:whatever/		
-					if (this.parentLevelName != null && this.parentLevelName.length > 0)
+					if (me.parentLevelName != null && me.parentLevelName.length > 0)
 					{
 						// find the route a level down from here and add the new one to it as a child route
-						
+						let parentRoute = me.getParentRoute(me.parentLevelName, me.router);
 					}
 					else
 					{
@@ -49,7 +49,7 @@ Vue.component('recursive-vue-app',
 				if (this.parentLevelName != null && this.parentLevelName.length > 0)
 				{
 					// find the route a level down from here and add the new one to it as a child route
-					
+					let parentRoute = me.getParentRoute(me.parentLevelName, me.router);					
 				}
 				else
 				{
@@ -76,6 +76,13 @@ Vue.component('recursive-vue-app',
 		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
 		  else if (this.name != null && this.name.length > 0) return this.name;
 		  return 'unnamed';
+	  },
+	  getParentRoute: function(parentLevelName, router) {
+		 let routes = router.getRoutes();
+		 for (let i = 0; i < routes.length; i++){
+			console.log(JSON.stringify(routes[i]));
+		 }
+		  return routes[routes.length - 1];
 	  },
 	  singleSlash: function(urlStart, urlEnd)
 	  {
@@ -142,6 +149,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
