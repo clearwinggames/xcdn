@@ -86,7 +86,7 @@ Vue.component('recursive-vue-app',
 			 }
 			 else if (path.startsWith(routes[i].path) && routes[i].path.length > 1) // parent-child relationship possibly?
 			 {
-				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path);
+				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path + ' (' +  route.path.replace(routes[i].path, '') + ')');
 				 
 				 route.path = route.path.replace(routes[i].path, '');
 				 
@@ -94,6 +94,7 @@ Vue.component('recursive-vue-app',
 					 routes[i].children = [ route ];
 				 else
 					 routes[i].children.push(route);
+
 				 return;
 			 }
 		  }
@@ -177,6 +178,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
