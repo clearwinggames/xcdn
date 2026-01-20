@@ -33,7 +33,11 @@ var router = new VueRouter({
 });
   
 router.beforeEach(to => {
-  console.log('Attempting to navigae to ' + to.fullPath);
+  console.log('Attempting to navigate to ' + to.fullPath);  
+  let routes = router.getRoutes();
+  for (let i = 0; i < routes.length; i++) {
+    console.log('Found route: ' + JSON.stringify(routes[i]));
+  }
 })
   
 var vue = new Vue
@@ -47,6 +51,7 @@ data: {
 </script>
 </body>
 </html>
+
 
 
 
