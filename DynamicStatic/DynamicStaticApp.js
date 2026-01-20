@@ -75,8 +75,24 @@ Vue.component('recursive-vue-app',
 		  return this.$root;
 	  },
 	  addRouteToRouter: function(path, route) {
-		  // use path to look at all routes in
-//		  this.router.getRoutes();
+		  // use path to look at all routes in this.router.getRoutes();
+		  let routes = this.router.getRoutes();
+
+		  for (let i = 0; i < routes.length; i++)
+		  {
+			 if (path == routes[i].path) // exists
+			 {
+				 return;
+			 }
+			 else if (path.startsWith(routes[i].path)) // parent-child relationship possibly?
+			 {
+				 if (typeof routes[i].children == 'undefined')
+					 routes[i].children = [ route ];
+				 else
+					 routes[i].children.push(route);
+				 return;
+			 }
+		  }
 		  // and either add this route straight in or, potentially, add it as a child to an existing root
 		  this.router.addRoute(route);
 	  },
@@ -157,6 +173,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
