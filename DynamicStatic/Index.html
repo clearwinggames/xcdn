@@ -31,16 +31,9 @@ const routes = [
 var router = new VueRouter({
   routes
 });
+  
 router.beforeEach(to => {
-  if (!hasNecessaryRoute(to)) {
-    //router.addRoute(generateRoute(to))
-    // trigger a redirection
-    //return to.fullPath
-    console.log('Could not find route ' + to.fullPath);
-  }
-  else {
-    console.log('Found route ' + to.fullPath);
-  }
+  console.log('Attempting to navigae to ' + to.fullPath);
 })
   
 var vue = new Vue
@@ -54,6 +47,7 @@ data: {
 </script>
 </body>
 </html>
+
 
 
 
