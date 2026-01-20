@@ -32,6 +32,7 @@ Vue.component('recursive-vue-app',
 					// let's have an extra parameter for our route here!  path/:whatever/		
 					if (me.parentLevelName != null && me.parentLevelName.length > 0)
 					{
+					    console.log('Parent Level Found ' + me.parentLevelName);
 						// find the route a level down from here and add the new one to it as a child route
 						let parentRoute = me.getParentRoute(me.parentLevelName, me.router);
 					}
@@ -46,8 +47,9 @@ Vue.component('recursive-vue-app',
 					
 				}   // how can we pass the router through this way?  Seems not straightforward...
 				console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);		
-				if (this.parentLevelName != null && this.parentLevelName.length > 0)
+				if (me.parentLevelName != null && me.parentLevelName.length > 0)
 				{
+					console.log('Parent Level Found ' + me.parentLevelName);
 					// find the route a level down from here and add the new one to it as a child route
 					let parentRoute = me.getParentRoute(me.parentLevelName, me.router);					
 				}
@@ -149,6 +151,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
