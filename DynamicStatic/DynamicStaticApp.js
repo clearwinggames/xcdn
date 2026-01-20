@@ -86,6 +86,7 @@ Vue.component('recursive-vue-app',
 			 }
 			 else if (path.startsWith(routes[i].path)) // parent-child relationship possibly?
 			 {
+				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path);
 				 if (typeof routes[i].children == 'undefined')
 					 routes[i].children = [ route ];
 				 else
@@ -173,6 +174,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
