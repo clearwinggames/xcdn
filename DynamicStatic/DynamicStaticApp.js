@@ -73,7 +73,7 @@ Vue.component('recursive-vue-app',
 	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
 	 </div>
 	 <div v-if="routeLoaded == true">
-	 here {{ getLevelName() }}
+	 here {{ getLevelName() }} {{ JSON.stringify(router) }}
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
     </div>
@@ -121,6 +121,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
