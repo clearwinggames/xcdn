@@ -1,6 +1,6 @@
 Vue.component('recursive-vue-app',
 {
-  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'levelName', 'router', 'routerPath'],
+  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'levelName', 'router', 'routerPath', 'parentLevelName'],
   data: function () {
     return {
         structure: null,
@@ -27,7 +27,7 @@ Vue.component('recursive-vue-app',
 				if (typeof me.structure.entries[i].target != 'undefined' && me.structure.entries[i].target != null && me.structure.entries[i].target.length > 0)
 				{  					
 					// modify templ     structure-url="./main.json" :router="router_hub"
-					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
+					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" parent-level-name="${me.levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
 
 					// let's have an extra parameter for our route here!  path/:whatever/					
 					me.router.addRoute
@@ -126,6 +126,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
