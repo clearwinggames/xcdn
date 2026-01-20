@@ -80,7 +80,7 @@ Vue.component('recursive-vue-app',
 	  getParentRoute: function(parentLevelName, router) {
 		 let routes = router.getRoutes();
 		 for (let i = 0; i < routes.length; i++){
-			console.log(JSON.stringify(routes[i]));
+			console.log(routes[i].path);
 		 }
 		  return routes[routes.length - 1];
 	  },
@@ -149,6 +149,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
