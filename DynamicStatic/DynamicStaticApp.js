@@ -32,10 +32,12 @@ Vue.component('recursive-vue-app',
 					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
 
 										// let's have an extra parameter for our route here!  path/:whatever/
+					
 										me.router.addRoute({ path: me.structure.entries[i].route + "/:extra", 
 					components: { [levelName]: { template: templ } } 
 					//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
-				   });
+				   }); // instead of this, we should add child routes to existing routes... 
+					
 				}   // how can we pass the router through this way?  Seems not straightforward...
 				console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);
 					me.router.addRoute({ path: me.structure.entries[i].route, 
@@ -121,6 +123,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
