@@ -78,6 +78,9 @@ Vue.component('recursive-vue-app',
 	{{ getLevelName() }}
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
+	 <div v-if="routeLoaded != true">
+	 	Route not loaded
+	 </div>
     </div>
   </div>`
 });
@@ -123,6 +126,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
