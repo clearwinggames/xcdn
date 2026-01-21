@@ -188,4 +188,4 @@ function httpGet(url)
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send();
   });
-}`
+}
