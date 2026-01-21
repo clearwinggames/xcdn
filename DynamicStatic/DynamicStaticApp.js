@@ -124,6 +124,9 @@ Vue.component('recursive-vue-app',
   <div>
     <div v-if="debug == true">
 	   Debug
+	   <div v-for="route in router.getRoutes()">
+	       {{ route.path }}
+	   </div>
 	</div>
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
@@ -181,6 +184,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
