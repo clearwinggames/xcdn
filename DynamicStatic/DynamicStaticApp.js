@@ -1,6 +1,6 @@
 Vue.component('recursive-vue-app',
 {
-  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'levelName', 'router', 'routerPath', 'parentLevelName'],
+  props: ['dataUrl', 'structureUrl', 'dataObject', 'structureObject', 'levelName', 'router', 'routerPath', 'parentLevelName', 'debug'],
   data: function () {
     return {
         structure: null,
@@ -122,6 +122,9 @@ Vue.component('recursive-vue-app',
   },
   template: `
   <div>
+    <div v-if="debug == true">
+	   Debug
+	</div>
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
 	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
@@ -178,6 +181,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
