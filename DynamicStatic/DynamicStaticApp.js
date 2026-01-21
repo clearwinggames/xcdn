@@ -122,12 +122,17 @@ Vue.component('recursive-vue-app',
   },
   template: `
   <div>
+    <hr />
     <div v-if="debug == true">
-	   Debug
+	   Debug On
 	   <div v-for="route in router.getRoutes()">
 	       {{ route.path }}
 	   </div>
 	</div>
+	<div v-if="debug != true">
+	   Debug Off
+	</div>
+	<hr />
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
 	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
@@ -183,29 +188,4 @@ function httpGet(url)
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send();
   });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}`
