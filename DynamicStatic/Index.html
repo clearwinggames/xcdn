@@ -10,7 +10,7 @@
     <router-view name="alt"></router-view>
   </div>
   <div>
-    <recursive-vue-app structure-url="./main.json" :router="router_hub" level-name="main" router-path="vue.router_hub" />
+    <recursive-vue-app debug="true" structure-url="./main.json" :router="router_hub" level-name="main" router-path="vue.router_hub" />
   </div>
   <div>
       <router-view></router-view>
@@ -51,5 +51,6 @@ data: {
 </script>
 </body>
 </html>
+
 
 
