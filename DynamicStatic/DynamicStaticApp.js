@@ -56,7 +56,9 @@ Vue.component('recursive-vue-app',
 				}
 				else*/
 				{
-					levelName = "altalt";
+					if (levelName == 'LevelTwo') {
+						me.addRouteToRouter('/Alt', { path: '/Alt', components: { [levelName]: { template: '<div>Alternate</div>' } };
+					}
 					me.addRouteToRouter(me.structure.entries[i].route,
 					{ 
 						path: me.structure.entries[i].route, 
@@ -201,6 +203,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
