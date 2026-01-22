@@ -66,9 +66,24 @@ Vue.component('temp-test', {
       </div>
     `
 });
+  for (let i = 0; i < 5; i++) 
+  {
+  Vue.component('temp-routerlink-' + i.toString(), {
+    props: [],
+    data: function() {
+      return {
+
+      };
+    },
+    template: `
+      <div>
+         <router-view name='level${i.toString()}'></router-view>
+      </div>
+    `
+});
+  }
 </script>
 </body>
 </html>
-
 
 
