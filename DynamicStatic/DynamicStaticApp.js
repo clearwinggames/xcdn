@@ -97,9 +97,10 @@ Vue.component('recursive-vue-app',
 				 
 				 if (typeof routes[i].children == 'undefined')
 					 routes[i].children = [ route ];
-				 else
+				 else if (routes[i].children.filter(c => c.path == route.path).length == 0)
 					 routes[i].children.push(route);
-
+				 else 
+					 console.log('Conflict, not adding route ' + route.path);
 				 return;
 			 }
 		  }
@@ -199,6 +200,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
