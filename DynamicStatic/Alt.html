@@ -12,7 +12,8 @@
 
   </div>
   <div>
-      <router-view></router-view>
+      <router-view>
+      </router-view>
   </div>
   <div>
     <router-view name="altalt"></router-view>
@@ -24,7 +25,7 @@
 const routes = [
     { path: '/', component: { template: '<div>Home Page</div>' } },
     { path: '/First', component: { template: '<div>Cool Page</div>' } },
-  { path: '/Second', component: { template: '<div>Another Page</div>' } },
+  { path: '/Second', component: TempTest },
   { path: '/Third', component: { template: '<div>Final Page</div>' } },
   { path: '/Third/One', component: { template: '<div>Secret Final Page</div>' } },  
   { path: '/Third/Two', components: { alt: { template: '<div>Secret Final Page 2</div>' }, altalt: { template: '<div>Secretive Page X</div>' } } }
@@ -50,6 +51,20 @@ data: {
   router_hub: router,
   is_debug: false
 }
+});
+
+Vue.component('temp-test', {
+    props: [],
+    data: function() {
+      return {
+
+      };
+    },
+    template: `
+      <div>
+      Temp Test Here
+      </div>
+    `
 });
 </script>
 </body>
