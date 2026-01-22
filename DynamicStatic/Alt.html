@@ -9,7 +9,7 @@
     <router-view name="alt"></router-view>
   </div>
   <div>
-
+    <a href='/Second'>Second</a>
   </div>
   <div>
       <router-view>
@@ -75,7 +75,8 @@ Vue.component('temp-test', {
       };
     },
     template: `
-      <div>RV${i.toString()}<br />
+      <div>
+        RV${i.toString()}<br />
          <router-view name='level${i.toString()}'></router-view>
       </div>
     `
@@ -87,7 +88,8 @@ Vue.component('temp-test', {
         };
       }, 
       template: `
-          <div>RL${i.toString()}<br />
+          <div>
+            RL${i.toString()}<br />
             <temp-routerlink-${i.toString()}' />
           </div>
       `
