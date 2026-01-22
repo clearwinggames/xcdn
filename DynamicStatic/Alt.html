@@ -27,6 +27,7 @@ const routes = [
   { path: '/Second', component: { template: '<div>Another Page</div>' } },
   { path: '/Third', component: { template: '<div>Final Page</div>' } },
   { path: '/Third/One', component: { template: '<div>Secret Final Page</div>' } },  
+  { path: '/Third/Two', components: { alt: { template: '<div>Secret Final Page 2</div>' }, altalt: { template: '<div>Secretive Page X</div>' } } }
 ];
 
 var router = new VueRouter({
