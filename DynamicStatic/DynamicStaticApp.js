@@ -134,7 +134,7 @@ Vue.component('recursive-vue-app',
 	       {{ route.path }}
 		   <div v-if="typeof route.children != 'undefined'">
 		      <div v-for="child in route.children">
-			  	 {{ child.path }}
+			  	 -- {{ child.path }}
 			  </div>
 		   </div>
 	   </div>
@@ -199,6 +199,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
