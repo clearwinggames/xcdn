@@ -6,7 +6,8 @@ Vue.component('recursive-vue-app',
         structure: null,
 		data: null,
 		name: null,
-		routeLoaded: false
+		routeLoaded: false,
+		mounted_plus_delay: false,
     }
   },
   mounted: function() { 
@@ -63,6 +64,10 @@ Vue.component('recursive-vue-app',
 					});
 				}
 				me.routeLoaded = true;
+				
+				setTimeout(() => {
+					me.mounted_plus_delay = true;
+				}, 1000);
 			}
 		});
 	}
@@ -123,7 +128,7 @@ Vue.component('recursive-vue-app',
   template: `
   <div>
     <hr />
-    <div v-if="debug == true">
+    <div v-if="debug == true && mounted_plus_delay == true">
 	   Debug On
 	   <div v-for="route in router.getRoutes()">
 	       {{ route.path }}
@@ -189,3 +194,4 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
