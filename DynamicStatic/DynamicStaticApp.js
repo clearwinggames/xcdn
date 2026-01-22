@@ -56,6 +56,7 @@ Vue.component('recursive-vue-app',
 				}
 				else*/
 				{
+					levelName = "altalt";
 					me.addRouteToRouter(me.structure.entries[i].route,
 					{ 
 						path: me.structure.entries[i].route, 
@@ -200,6 +201,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
