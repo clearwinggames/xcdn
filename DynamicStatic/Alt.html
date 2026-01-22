@@ -2,7 +2,6 @@
 <head>
 <script src="./vue2.js"></script>
 <script src="./vueRouter.js"></script>
-<script src="./DynamicStaticApp.js"></script>
 </head>
 <body>
 <div id="app">
@@ -20,11 +19,7 @@
   </div>
 </div>
 <script>
-
-  const urlParams = new URLSearchParams(window.location.search);
-  let debug = urlParams.get('debug');
-  debug = true;
-Vue.use(VueRouter);
+  Vue.use(VueRouter);
   
 const routes = [
     { path: '/', component: { template: '<div>Home Page</div>' } },
@@ -52,7 +47,7 @@ router,
 el: '#app',
 data: {
   router_hub: router,
-  is_debug: debug
+  is_debug: false
 }
 });
 </script>
