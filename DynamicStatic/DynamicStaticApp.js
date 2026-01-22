@@ -67,7 +67,7 @@ Vue.component('recursive-vue-app',
 				
 				setTimeout(() => {
 					me.mounted_plus_delay = true;
-				}, 3000);
+				}, 100);
 			}
 		});
 	}
@@ -199,6 +199,7 @@ function httpGet(url)
     xhttp.send();
   });
 }
+
 
 
 
