@@ -62,7 +62,7 @@ Vue.component('temp-test', {
     },
     template: `
       <div>
-      Temp Test Here
+      Temp Test Here: <temp-routerlink-1 />
       </div>
     `
 });
@@ -72,15 +72,26 @@ Vue.component('temp-test', {
     props: [],
     data: function() {
       return {
-
       };
     },
     template: `
-      <div>
+      <div>RV${i.toString()}<br />
          <router-view name='level${i.toString()}'></router-view>
       </div>
     `
 });
+    Vue.component('temp-link-' + i.toString(), {
+      props: [],
+      data: function() {
+        return {
+        };
+      }, 
+      template: `
+          <div>RL${i.toString()}<br />
+            <temp-routerlink-${i.toString()}' />
+          </div>
+      `
+    });
   }
 </script>
 </body>
