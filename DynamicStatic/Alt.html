@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="./vue2.js"></script>
+<script src="./vueRouter.js"></script>
+<script src="./DynamicStaticApp.js"></script>
+</head>
+<body>
+<div id="app">
+  <div>
+    <router-view name="alt"></router-view>
+  </div>
+  <div>
+    <recursive-vue-app :debug="is_debug" structure-url="./main.json" :router="router_hub" level-name="main" router-path="vue.router_hub" />
+  </div>
+  <div>
+      <router-view></router-view>
+  </div>
+  <div>
+    <router-view name="altalt"></router-view>
+  </div>
+</div>
+<script>
+
+  const urlParams = new URLSearchParams(window.location.search);
+  let debug = urlParams.get('debug');
+  debug = true;
+Vue.use(VueRouter);
+  
+const routes = [
+    { path: '/', component: { template: '<div>Home Page</div>' } },
+    /*{ path: '/First', component: { template: '<div>Cool Page</div>' } },
+  { path: '/Second', component: { template: '<div>Another Page</div>' } },
+  { path: '/Third', component: { template: '<div>Final Page</div>' } },
+  { path: '/Third/One', component: { template: '<div>Secret Final Page</div>' } },  */
+];
+
+var router = new VueRouter({
+  routes
+});
+  
+/*router.beforeEach(to => {
+  console.log('Attempting to navigate to ' + to.fullPath);  
+  let routes = router.getRoutes();
+  for (let i = 0; i < routes.length; i++) {
+    console.log('Found route: ' + JSON.stringify(routes[i]));
+  }
+})*/
+  
+var vue = new Vue
+({
+router,
+el: '#app',
+data: {
+  router_hub: router,
+  is_debug: debug
+}
+});
+</script>
+</body>
+</html>
+
+
+
