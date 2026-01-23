@@ -27,11 +27,11 @@ const routes = [
     { path: '/First', component: { template: '<div>Cool Page</div>' } },
   
   { path: '/Second', component: { template: '<div>Temp Test: <temp-test /></div>' },
-    children: {
+    children: [
       level1: {
         path: 'More', component: { template: '<div>TRL1: <temp-routerlink-1 /></div>'
       }
-    }
+    ]
   },
   
   { path: '/Third', component: { template: '<div>Final Page</div>' } },
