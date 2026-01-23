@@ -75,10 +75,16 @@ Vue.component('temp-test', {
     },
     template: `
       <div>
-      Temp Test Here: <temp-routerlink-1 />
+      Temp Test Here: <temp-routerlink-x />
+      <div>
+        TRL1 Also: <temp-routerlink-1 />
+      </div>
       </div>
     `
 });
+  Vue.component('temp-routerlink-x', {
+    template: '<div>Temp RLX</div>'
+  });
   for (let i = 0; i < 5; i++) 
   {
   Vue.component('temp-routerlink-' + i.toString(), {
