@@ -25,10 +25,19 @@
 const routes = [
     { path: '/', component: { template: '<div>Home Page</div>' } },
     { path: '/First', component: { template: '<div>Cool Page</div>' } },
-  { path: '/Second', component: { template: '<div>Temp Test: <temp-test /></div>' } },
+  
+  { path: '/Second', component: { template: '<div>Temp Test: <temp-test /></div>' },
+    children: {
+      {
+        path: 'More', component: { template: '<div>TRL1: <temp-routerlink-1 /></div>'
+      }
+    }
+  },
+  
   { path: '/Third', component: { template: '<div>Final Page</div>' } },
   { path: '/Third/One', component: { template: '<div>Secret Final Page</div>' } },  
   { path: '/Third/Two', components: { alt: { template: '<div>Secret Final Page 2</div>' }, altalt: { template: '<div>Secretive Page X</div>' } } }
+  
 ];
 
 var router = new VueRouter({
