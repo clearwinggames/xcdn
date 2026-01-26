@@ -48,14 +48,6 @@ var router = new VueRouter({
   routes
 });
   
-/*router.beforeEach(to => {
-  console.log('Attempting to navigate to ' + to.fullPath);  
-  let routes = router.getRoutes();
-  for (let i = 0; i < routes.length; i++) {
-    console.log('Found route: ' + JSON.stringify(routes[i]));
-  }
-})*/
-  
 var vue = new Vue
 ({
 router,
@@ -75,7 +67,9 @@ Vue.component('temp-test', {
     },
     template: `
       <div>
-      Temp Test Here: <temp-routerlink-x />
+        <div>
+        Temp Test Here: <temp-routerlink-x />
+        </div>
       <div>
         TRL0 Also: <temp-routerlink-0 />
       </div>
@@ -96,7 +90,7 @@ Vue.component('temp-test', {
     template: `
       <div>
         RV${i.toString()}<br />
-         <router-view name='level${i.toString()}'></router-view>
+         <router-view name='level${(i+1).toString()}'></router-view>
       </div>
     `
 });
@@ -109,7 +103,7 @@ Vue.component('temp-test', {
       template: `
           <div>
             RL${i.toString()}<br />
-            <temp-routerlink-${i.toString()}' />
+            <temp-routerlink-${(i+1).toString()}' />
           </div>
       `
     });
