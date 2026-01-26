@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="./vue2.js"></script>
+<script src="./vueRouter.js"></script>
+<script src="./RecursiveVueApp.js"></script>
+</head>
+<body>
+<div id="app">
+  <div>
+    <router-view name="alt"></router-view>
+  </div>
+  <div>
+    <recursive-vue-app :debug="is_debug" structure-url="./main.json" :router="router_hub" level-name="main" router-path="vue.router_hub" />
+  </div>
+  <div>
+      <router-view></router-view>
+  </div>
+  <div>
+    <router-view name="altalt"></router-view>
+  </div>
+</div>
+<script>
+
+  const urlParams = new URLSearchParams(window.location.search);
+  let debug = urlParams.get('debug');
+  debug = true;
+Vue.use(VueRouter);
+  
+const routes = [
+    { path: '/', component: { template: '<div>Home Page</div>' } },
+];
+
+var router = new VueRouter({
+  routes
+});
+  
+var vue = new Vue
+({
+router,
+el: '#app',
+data: {
+  router_hub: router,
+  is_debug: debug
+}
+});
+</script>
+</body>
+</html>
