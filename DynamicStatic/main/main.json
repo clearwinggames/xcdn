@@ -1,21 +1,27 @@
 {
 	"entries": [
 	{
-		"title": "First",
+		"title": "CWGJS",
+		"route": "/CWGJS",
+		"template": "<div>CWGJS Here</div>",
 		"view": {
 			"name": "",
 			"path": ""
 		}
 	},
 	{
-		"title": "Second",
+		"title": "CyberEnv",
+		"route": "/CyberEnv",
+		"template": "<div>CyberEnv Here</div>",
 		"view": {
 			"name": "",
 			"path": ""
 		}
 	},
 	{
-		"title": "Third",
+		"title": "About",
+		"route": "/About",
+		"template": "<div>About Page Here</div>",
 		"view": {
 			"name": "",
 			"path": ""
