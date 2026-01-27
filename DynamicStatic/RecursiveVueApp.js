@@ -100,6 +100,9 @@ Vue.component('recursive-vue-app',
 		 }
 		  return routes[routes.length - 1];
 	  },
+	  getCurrentRoute: function() {
+			return this.$route.path;
+	  },
 	  singleSlash: function(urlStart, urlEnd)
 	  {
 		  if ((urlStart.endsWith('/') && !urlEnd.startsWith('/')) || (!urlStart.endsWith('/') && urlEnd.startsWith('/'))) return urlStart + urlEnd;
@@ -109,6 +112,8 @@ Vue.component('recursive-vue-app',
   },
   template: `
   <div>
+    <hr />
+	{{ getCurrentRoute() }}
     <hr />
     <div v-if="debug == true && mounted_plus_delay == true">
 	   Debug On
