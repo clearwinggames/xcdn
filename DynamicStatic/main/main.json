@@ -1,0 +1,25 @@
+{
+	"entries": [
+	{
+		"title": "First",
+		"view": {
+			"name": "",
+			"path": ""
+		}
+	},
+	{
+		"title": "Second",
+		"view": {
+			"name": "",
+			"path": ""
+		}
+	},
+	{
+		"title": "Third",
+		"view": {
+			"name": "",
+			"path": ""
+		}		
+	}
+	]
+}
