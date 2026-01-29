@@ -27,10 +27,18 @@
 Vue.use(VueRouter);
   
 const routes = [
-    { path: '/', component: { template: '<div>Home Page</div>' },
+    { 
+        path: '/', component: { template: '<div>Home Page</div>' },
         children: [
           { path: 'extended', component: { template: '<div>Extended Home Page</div>' }  },
           { path: 'alternate', name: 'altalt', component: { template: '<div>Alterate Home Page Render</div>' } }
+        ]
+    },
+    { 
+        path: '/Hidden', component: { template: '<div>Hidden Page</div>' },
+        children: [
+          { path: 'extended', component: { template: '<div>Extended Hidden Page</div>' }  },
+          { path: 'alternate', name: 'altalt', component: { template: '<div>Alterate Hidden Page Render</div>' } }
         ]
     },
 ];
