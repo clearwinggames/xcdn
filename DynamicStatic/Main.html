@@ -35,9 +35,9 @@ const routes = [
         ]
     },
     { 
-        path: '/Hidden', component: { template: '<div>Hidden Page</div>' },
+        path: '/Hidden', name: 'alt', component: { template: '<div>Hidden Page</div>' },
         children: [
-          { path: 'extended', component: { template: '<div>Extended Hidden Page</div>' }  },
+          { path: 'extended', name: 'alt', component: { template: '<div>Extended Hidden Page</div>' }  },
           { path: 'alternate', name: 'altalt', component: { template: '<div>Alterate Hidden Page Render</div>' } }
         ]
     },
