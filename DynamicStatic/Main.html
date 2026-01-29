@@ -27,7 +27,12 @@
 Vue.use(VueRouter);
   
 const routes = [
-    { path: '/', component: { template: '<div>Home Page</div>' } },
+    { path: '/', component: { template: '<div>Home Page</div>' },
+        children: [
+          { path: 'extended', component: { template: '<div>Extended Home Page</div>' }  },
+          { path: 'alternate', name: 'altalt', component: { template: '<div>Alterate Home Page Render</div>' } }
+        ]
+    },
 ];
 
 var router = new VueRouter({
