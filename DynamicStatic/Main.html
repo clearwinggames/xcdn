@@ -30,7 +30,9 @@ const routes = [
     { 
         path: '/', component: { template: '<div>Home Page<div><router-view></router-view></div></div>' },
         children: [
-          { path: 'extended', component: { template: '<div>Extended Home Page</div>' }  },
+          { path: 'extended', component: { template: '<div>Extended Home Page<router-view></router-view></div>' }, children: [ {
+            path: /more', component: { template: '<div>Extended More</div>' }
+          } ] },
           { path: 'alternate', components: { altalt: { template: '<div>Alterate Home Page Render</div>' } } }
         ]
     },
