@@ -17,11 +17,10 @@ Vue.component('recursive-vue-app',
 
 		  // foreach(urlSegment in breakUpPath(path) { router.push(urlSegment); }
 		  let routeSections = me.getCurrentRouteSections();
-		  for (let i = 0; i < routeSections.length; i++)
-		  {
-			console.log('Router push: ' + routeSections[i]);
-			 me.router.push(routeSections[i]);
-		  }
+		  let nextLevel = 1; // calculate this
+		  
+		  console.log('Router push: ' + routeSections[nextLevel]);
+		  me.router.push(routeSections[nextLevel]);
 	  });
   },
   computed: {
