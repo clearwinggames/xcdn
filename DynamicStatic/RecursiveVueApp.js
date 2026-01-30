@@ -104,8 +104,8 @@ Vue.component('recursive-vue-app',
 	  preprocessEntryTemplate: function(entry) {
 			return entry.template.replace('{{ recurse }}', 
 	`<div><recursive-vue-app 
-	    structure-url="${this.structure.entries[i].target}" 
-		level-name="${this.structure.entries[i].title}" 
+	    structure-url="${entry.target}" 
+		level-name="${entry.title}" 
 		parent-level-name="${this.getLevelName()}" 
 		:router="${this.routerPath}" 
 		router-path="${this.routerPath}" 
