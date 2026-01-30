@@ -100,6 +100,16 @@ Vue.component('recursive-vue-app',
 		  if ((urlStart.endsWith('/') && !urlEnd.startsWith('/')) || (!urlStart.endsWith('/') && urlEnd.startsWith('/'))) return urlStart + urlEnd;
 		  else if (urlStart.endsWith('/') && urlEnd.startsWith('/')) return urlStart.trimEnd('/') + urlEnd;
 		  return urlStart + '/' + urlEnd;  
+	  },
+	  preprocessEntryTemplate: function(entry) {
+			return entry.template.replace('{{ recurse }}', 
+	`<recursive-vue-app 
+	    structure-url="${this.structure.entries[i].target}" 
+		level-name="${this.structure.entries[i].title}" 
+		parent-level-name="${this.getLevelName()}" 
+		:router="${this.routerPath}" 
+		router-path="${this.routerPath}" 
+	/>`);
 	  }
   },
   template: `
@@ -125,6 +135,9 @@ Vue.component('recursive-vue-app',
 	<hr />
   	<div v-show="structure != null">
   	 <div v-for="entry in structure.entries">
+	 	<div v-show="false">
+		    {{ preprocessTemplate(entry) }}
+		</div>
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
 	 </div>
 	 <div v-if="false == true && routeLoaded == true">
