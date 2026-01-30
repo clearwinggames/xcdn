@@ -181,6 +181,7 @@ function loadLevel(rvApp)
 				
 					setTimeout(() => {
 						me.mounted_plus_delay = true;
+						resolve(me);
 					}, 1500);
 			  }
 			});
