@@ -1,0 +1,13 @@
+{
+	"entries": [
+    	{
+    		"title": "3WG",
+		    "route": "3WG",
+    		"template": "<div>3WG Here</div>",
+		    "view": {
+			    "name": "",
+    			"path": ""
+	    	}
+  	 }
+  ]
+}
