@@ -136,7 +136,7 @@ Vue.component('recursive-vue-app',
   	<div v-show="structure != null">
   	 <div v-for="entry in structure.entries">
 	 	<div v-show="true">
-		    {{ preprocessTemplate(entry) }}
+		    {{ preprocessEntryTemplate(entry) }}
 		</div>
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
 	 </div>
