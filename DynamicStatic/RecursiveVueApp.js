@@ -19,7 +19,7 @@ Vue.component('recursive-vue-app',
 		  let routeSections = me.getCurrentRouteSections();
 		  for (let i = 0; i < routeSections.length; i++)
 		  {
-			console.log('Router push: ' + routeSections[i]));
+			console.log('Router push: ' + routeSections[i]);
 			 me.router.push(routeSections[i]);
 		  }
 	  });
