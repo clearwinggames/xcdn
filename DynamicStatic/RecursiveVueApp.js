@@ -67,10 +67,12 @@ Vue.component('recursive-vue-app',
 
 		  for (let i = 0; i < routes.length; i++)
 		  {
+			  console.log('Comparing ' + path + ' to existing route ' + routes[i].path);
 			 if (path == routes[i].path) // exists
 			 {
+				 console.log('Match found. Skipping add.');
 				 return;
-			 }
+			 } // routes[i].path is existing (base) route, path is the new path to add
 			 else if ((path.startsWith(routes[i].path) || path.startsWith(routes[i].path.trimStart('/'))) && routes[i].path.length > 1) // parent-child relationship possibly?
 			 {
 				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path + ' (' +  route.path.replace(routes[i].path, '') + ') ' + JSON.stringify(route.components));
@@ -93,6 +95,7 @@ Vue.component('recursive-vue-app',
 			 }
 		  }
 		  // and either add this route straight in or, potentially, add it as a child to an existing root
+		  console.log('Adding New Route (' + path +')')
 		  this.router.addRoute(route);
 	  },
 	  getLevelName: function() {
