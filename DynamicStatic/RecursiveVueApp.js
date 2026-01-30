@@ -103,13 +103,13 @@ Vue.component('recursive-vue-app',
 	  },
 	  preprocessEntryTemplate: function(entry) {
 			return entry.template.replace('{{ recurse }}', 
-	`<recursive-vue-app 
+	`<div><recursive-vue-app 
 	    structure-url="${this.structure.entries[i].target}" 
 		level-name="${this.structure.entries[i].title}" 
 		parent-level-name="${this.getLevelName()}" 
 		:router="${this.routerPath}" 
 		router-path="${this.routerPath}" 
-	/>`);
+	/></div>`);
 	  }
   },
   template: `
@@ -135,7 +135,7 @@ Vue.component('recursive-vue-app',
 	<hr />
   	<div v-show="structure != null">
   	 <div v-for="entry in structure.entries">
-	 	<div v-show="false">
+	 	<div v-show="true">
 		    {{ preprocessTemplate(entry) }}
 		</div>
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
