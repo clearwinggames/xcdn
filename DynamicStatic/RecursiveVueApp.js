@@ -11,47 +11,12 @@ Vue.component('recursive-vue-app',
     }
   },
   mounted: function() { 
-    let me = this;
-	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
-		// go get the structure object 
-		console.log('RVA (' + this.levelName + ') Mounted, getting structure object ' + this.structureUrl);
-		httpGet(this.structureUrl).then(x => {
-			me.structure = JSON.parse(x);
-	        me.name = me.structure.name;
-			let levelName = me.getLevelName();
-			
-			console.log('Got: Level name - ' + levelName);
-			
-			for (let i = 0; i < me.structure.entries.length; i++)
-			{
-				let templ = me.structure.entries[i].template;
-				if (templ == null || templ.length == 0) templ = `<div>Autofilled: ${me.structure.entries[i].title}</div>`;
-				if (typeof me.structure.entries[i].target != 'undefined' && me.structure.entries[i].target != null && me.structure.entries[i].target.length > 0)
-				{  					
-					// modify templ     structure-url="./main.json" :router="router_hub"
-					templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" level-name="${me.structure.entries[i].title}" parent-level-name="${levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
-					
-				}   // how can we pass the router through this way?  Seems not straightforward...
-				console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);		
-								
-					/*if (levelName == 'LevelTwo') {
-						me.addRouteToRouter('/Alt', { path: '/Alt', components: { [levelName]: { template: '<div>Alternate</div>' } } });
-					}*/
-				
-					me.addRouteToRouter(me.structure.entries[i].route,
-					{ 
-						path: me.structure.entries[i].route, 
-						components: { default: { template: templ } } //, [levelName]: { template: templ } } 
-						//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
-					});
-				
-				me.routeLoaded = true;
-				
-				setTimeout(() => {
-					me.mounted_plus_delay = true;
-				}, 1500);
-			}
-		});
+	  let me = this;
+	  loadLevel(this).then(x => {
+		  // here is where you can break up the URL and push levels sequentially
+
+		  // foreach(urlSegment in breakUpPath(path) { router.push(urlSegment); }
+	  });
 	}
   },
   computed: {
@@ -162,6 +127,49 @@ Vue.component('recursive-vue-app',
     </div>
   </div>`
 });
+function loadLevel(rvApp) {
+	return new Promise(function(resolve, reject) 
+	{
+		let me = rvApp;
+		if (me.structureObject == null && me.structureUrl != null && me.structureUrl.length > 0) {
+			// go get the structure object 
+			console.log('RVA (' + me.levelName + ') Mounted, getting structure object ' + me.structureUrl);
+		
+			httpGet(me.structureUrl).then(x => {
+				me.structure = JSON.parse(x);
+	        	me.name = me.structure.name;
+				let levelName = me.getLevelName();
+			
+				console.log('Got: Level name - ' + levelName);
+			
+				for (let i = 0; i < me.structure.entries.length; i++)
+				{
+					let templ = me.structure.entries[i].template;
+					if (templ == null || templ.length == 0) templ = `<div>Autofilled: ${me.structure.entries[i].title}</div>`;
+					if (typeof me.structure.entries[i].target != 'undefined' && me.structure.entries[i].target != null && me.structure.entries[i].target.length > 0)
+					{  					
+						// modify templ     structure-url="./main.json" :router="router_hub"
+						templ = templ.replace('{{ recurse }}', `<recursive-vue-app structure-url="${me.structure.entries[i].target}" level-name="${me.structure.entries[i].title}" parent-level-name="${levelName}" :router="${me.routerPath}" router-path="${me.routerPath}" />`);
+					
+					}   // how can we pass the router through this way?  Seems not straightforward...
+					console.log('Adding route to router: ' + me.structure.entries[i].route + '; ' + templ);									
+				
+					me.addRouteToRouter(me.structure.entries[i].route,
+					{ 
+						path: me.structure.entries[i].route, 
+						components: { default: { template: templ } } //, [levelName]: { template: templ } } 
+						//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
+					});
+				
+					me.routeLoaded = true;
+				
+					setTimeout(() => {
+						me.mounted_plus_delay = true;
+					}, 1500);
+			}
+		});
+	});
+}
 function httpGet(url) 
 {
   return new Promise(function(resolve, reject) 
