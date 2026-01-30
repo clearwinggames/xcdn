@@ -104,8 +104,12 @@ Vue.component('recursive-vue-app',
 	  getCurrentRoute: function() {
 			return this.$route.path;
 	  },
-	  singleSlash: function(urlStart, urlEnd)
+	  singleSlash: function(urlStart, entryUrlEnd)
 	  {
+		  let urlEnd = entryUrlEnd.title;
+		  let fullUrl = entryUrlEnd.route;
+		  if (!fullUrl.startsWith('/') && fullUrl.indexOf('/') > 0)
+			  urlEnd = fullUrl;
 		  urlStart = urlStart.replace(this.$route.path, '');
 		  if ((urlStart.endsWith('/') && !urlEnd.startsWith('/')) || (!urlStart.endsWith('/') && urlEnd.startsWith('/'))) return urlStart + urlEnd;
 		  else if (urlStart.endsWith('/') && urlEnd.startsWith('/')) return urlStart.trimEnd('/') + urlEnd;
@@ -135,7 +139,7 @@ Vue.component('recursive-vue-app',
 	<hr />
   	<div v-if="structure != null">
   	 <div v-for="entry in structure.entries">
-	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
+	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
 	 </div>
 	 <div v-if="false == true && routeLoaded == true">
 	{{ getLevelName() }}
