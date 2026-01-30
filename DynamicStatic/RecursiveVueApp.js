@@ -14,6 +14,7 @@ Vue.component('recursive-vue-app',
     let me = this;
 	if (this.structureObject == null && this.structureUrl != null && this.structureUrl.length > 0) {
 		// go get the structure object 
+		console.log('RVA (' + this.levelName + ') Mounted, getting structure object ' + this.structureUrl);
 		httpGet(this.structureUrl).then(x => {
 			me.structure = JSON.parse(x);
 	        me.name = me.structure.name;
