@@ -133,7 +133,7 @@ Vue.component('recursive-vue-app',
 	   Debug Off
 	</div>
 	<hr />
-  	<div v-show="structure != null">
+  	<div v-if="structure != null && structure.entries != null">
   	 <div v-for="entry in structure.entries">
 	 	<div v-show="false">
 		    <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
