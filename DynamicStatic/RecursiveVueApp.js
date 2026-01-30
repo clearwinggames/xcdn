@@ -73,7 +73,7 @@ Vue.component('recursive-vue-app',
 				 console.log('Match found. Skipping add.');
 				 return;
 			 } // routes[i].path is existing (base) route, path is the new path to add
-			 else if ((path.startsWith(routes[i].path) || path.startsWith(routes[i].path.trimStart('/'))) && routes[i].path.length > 1) // parent-child relationship possibly?
+			 else if (routes[i].path.length > 1 && (path.startsWith(routes[i].path) || path.startsWith(routes[i].path.substring(1)))) // parent-child relationship possibly?
 			 {
 				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path + ' (' +  route.path.replace(routes[i].path, '') + ') ' + JSON.stringify(route.components));
 
