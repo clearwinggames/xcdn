@@ -55,6 +55,7 @@ Vue.component('recursive-vue-app',
 					 // but basically, need to find the parent route and add the child but only the last part of the path.
 					 // route.path = route.path.substring
 					 // use this.getSections(path)
+					 this.assignAsChild(route);
 				 }
 				 else {
 				 	route.path = route.path.replace(routes[i].path, '');
@@ -78,6 +79,29 @@ Vue.component('recursive-vue-app',
 		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
 		  else if (this.name != null && this.name.length > 0) return this.name;
 		  return 'unnamed';
+	  },
+	  assignAsChild: function(route) {
+			// we have the full/path here, let's find a suitable parent and add this.
+		  let sections = this.getSections(route.path);
+		  let routes = this.router.getRoutes();
+		  for (let j = 0; j < sections.length; j++) {
+				// first/part, lets find the root level (parent) route
+			  // this is not going to work so well if we're dealing with more than one layer of separation, is it?  Need to make this more recursive somehow.
+			  for (let i = 0; i < routes.length; i++) {
+					if (this.isParent(route, routes[i])) {
+						
+					}
+				    else if (this.isAncestor(route, routes[i])) {
+						// call assign as child again somehow?
+					}
+			  }
+		  }
+	  },
+	  isParent: function(routeChild, routeOther) {
+
+	  },
+	  isAncestor: function(routeChild, routeOther) {
+
 	  },
 	  getParentRoute: function(parentLevelName, router) {
 		 let routes = router.getRoutes();
