@@ -36,10 +36,11 @@ Vue.component('recursive-vue-app',
 					/*if (levelName == 'LevelTwo') {
 						me.addRouteToRouter('/Alt', { path: '/Alt', components: { [levelName]: { template: '<div>Alternate</div>' } } });
 					}*/
+				
 					me.addRouteToRouter(me.structure.entries[i].route,
 					{ 
 						path: me.structure.entries[i].route, 
-						components: { [levelName]: { template: templ } } 
+						components: { default: { template: templ } } //, [levelName]: { template: templ } } 
 						//components: { default: { template: '<div>Other</div>' }, alt: { template: '<div>Placeholder</div>' } }
 					});
 				
@@ -136,10 +137,12 @@ Vue.component('recursive-vue-app',
   	 <div v-for="entry in structure.entries">
 	 	<a :href="singleSlash(location.href, entry.title)">{{ entry.title }}</a>
 	 </div>
-	 <div v-if="routeLoaded == true">
+	 <div v-if="false == true && routeLoaded == true">
 	{{ getLevelName() }}
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
+	 <div v-if="routeLoaded == true">
+	 	<router-view></router-view>
 	 <div v-if="routeLoaded != true">
 	 	Route not loaded
 	 </div>
