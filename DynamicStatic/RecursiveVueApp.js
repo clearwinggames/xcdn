@@ -17,7 +17,6 @@ Vue.component('recursive-vue-app',
 
 		  // foreach(urlSegment in breakUpPath(path) { router.push(urlSegment); }
 	  });
-	}
   },
   computed: {
 
@@ -127,15 +126,18 @@ Vue.component('recursive-vue-app',
     </div>
   </div>`
 });
-function loadLevel(rvApp) {
+function loadLevel(rvApp) 
+{
 	return new Promise(function(resolve, reject) 
 	{
 		let me = rvApp;
-		if (me.structureObject == null && me.structureUrl != null && me.structureUrl.length > 0) {
+		if (me.structureObject == null && me.structureUrl != null && me.structureUrl.length > 0) 
+		{
 			// go get the structure object 
 			console.log('RVA (' + me.levelName + ') Mounted, getting structure object ' + me.structureUrl);
 		
-			httpGet(me.structureUrl).then(x => {
+			httpGet(me.structureUrl).then(x => 
+			{
 				me.structure = JSON.parse(x);
 	        	me.name = me.structure.name;
 				let levelName = me.getLevelName();
@@ -166,8 +168,9 @@ function loadLevel(rvApp) {
 					setTimeout(() => {
 						me.mounted_plus_delay = true;
 					}, 1500);
-			}
-		});
+			  }
+			});
+		}
 	});
 }
 function httpGet(url) 
