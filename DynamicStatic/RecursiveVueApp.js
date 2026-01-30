@@ -16,10 +16,10 @@ Vue.component('recursive-vue-app',
 		  // here is where you can break up the URL and push levels sequentially
 
 		  // foreach(urlSegment in breakUpPath(path) { router.push(urlSegment); }
-		  let routeSections = me.getCurrentRouteSections();
-		  let nextLevel = 1; // calculate this
+		  //let routeSections = me.getCurrentRouteSections();
+		  //let nextLevel = 1; // calculate this
 		  
-		  console.log('Router push: ' + routeSections[nextLevel]);
+		  //console.log('Router push: ' + routeSections[nextLevel]);
 		  //me.router.replace(routeSections[nextLevel]);
 	  });
   },
@@ -123,7 +123,7 @@ Vue.component('recursive-vue-app',
 	   Debug Off
 	</div>
 	<hr />
-  	<div v-if="structure != null">
+  	<div v-show="structure != null">
   	 <div v-for="entry in structure.entries">
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
 	 </div>
@@ -131,7 +131,7 @@ Vue.component('recursive-vue-app',
 	{{ getLevelName() }}
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
-	 <div v-if="routeLoaded == true">
+	 <div v-show="routeLoaded == true">
 	 	<router-view></router-view>
 	 <div v-if="routeLoaded != true">
 	 	Route not loaded
