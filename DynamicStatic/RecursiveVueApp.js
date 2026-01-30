@@ -108,7 +108,7 @@ Vue.component('recursive-vue-app',
 	  {
 		  let urlEnd = entryUrlEnd.title;
 		  let fullUrl = entryUrlEnd.route;
-		  if (!fullUrl.startsWith('/') && fullUrl.indexOf('/') > 0)
+		  if (fullUrl.indexOf('/') == 0 && fullUrl.lastIndexOf('/') > 0)
 			  urlEnd = fullUrl;
 		  urlStart = urlStart.replace(this.$route.path, '');
 		  if ((urlStart.endsWith('/') && !urlEnd.startsWith('/')) || (!urlStart.endsWith('/') && urlEnd.startsWith('/'))) return urlStart + urlEnd;
