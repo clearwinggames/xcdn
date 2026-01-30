@@ -16,10 +16,16 @@ Vue.component('recursive-vue-app',
 		  // here is where you can break up the URL and push levels sequentially
 
 		  // foreach(urlSegment in breakUpPath(path) { router.push(urlSegment); }
+		  let routeSections = me.getCurrentRouteSections();
+		  for (let i = 0; i < routeSections.length; i++)
+		  {
+			console.log('Router push: ' + routeSections[i]));
+			 me.router.push(routeSections[i]);
+		  }
 	  });
   },
   computed: {
-
+	  
   },
   methods: {
 	  getVueApp: function() {
@@ -76,6 +82,14 @@ Vue.component('recursive-vue-app',
 	  },
 	  getCurrentRoute: function() {
 			return this.$route.path;
+	  },
+	  getCurrentRouteSections: function() {
+		  let routes = this.$route.path.split('/');
+		  for (let i = 0; i < routes.length; i++){
+			  if (i > 0)
+				  routes[i] = routes[i - 1] + routes[i]; 
+		  }
+		  return routes;
 	  },
 	  singleSlash: function(urlStart, entryUrlEnd)
 	  {
