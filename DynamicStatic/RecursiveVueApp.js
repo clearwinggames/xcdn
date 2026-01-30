@@ -70,7 +70,7 @@ Vue.component('recursive-vue-app',
 			 {
 				 return;
 			 }
-			 else if (path.startsWith(routes[i].path) && routes[i].path.length > 1) // parent-child relationship possibly?
+			 else if ((path.startsWith(routes[i].path) || path.startsWith(routes[i].path.trimStart('/')) && routes[i].path.length > 1) // parent-child relationship possibly?
 			 {
 				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path + ' (' +  route.path.replace(routes[i].path, '') + ') ' + JSON.stringify(route.components));
 
