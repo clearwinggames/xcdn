@@ -49,6 +49,13 @@ Vue.component('recursive-vue-app',
 				 if (path.indexOf('/') == 0 && path.lastIndexOf('/') > 0) {
 
 				 }
+				 else if (path.indexOf('/') > 0)
+				 {
+					 // this needs to be recursive and its a bit complex for now
+					 // but basically, need to find the parent route and add the child but only the last part of the path.
+					 // route.path = route.path.substring
+					 // use this.getSections(path)
+				 }
 				 else {
 				 	route.path = route.path.replace(routes[i].path, '');
 				 	if (route.path.startsWith('/')) route.path = route.path.substring(1);
@@ -82,13 +89,16 @@ Vue.component('recursive-vue-app',
 	  getCurrentRoute: function() {
 			return this.$route.path;
 	  },
-	  getCurrentRouteSections: function() {
-		  let routes = this.$route.path.split('/');
+	  getSections: function(path) {
+		  let routes = path.split('/');
 		  for (let i = 0; i < routes.length; i++){
 			  if (i > 0)
 				  routes[i] = routes[i - 1] + routes[i]; 
 		  }
 		  return routes;
+	  },
+	  getCurrentRouteSections: function() {
+		  return this.getSections(this.$route.path);
 	  },
 	  singleSlash: function(urlStart, entryUrlEnd)
 	  {
