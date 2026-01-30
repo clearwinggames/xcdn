@@ -20,7 +20,7 @@ Vue.component('recursive-vue-app',
 		  let nextLevel = 1; // calculate this
 		  
 		  console.log('Router push: ' + routeSections[nextLevel]);
-		  me.router.replace(routeSections[nextLevel]);
+		  //me.router.replace(routeSections[nextLevel]);
 	  });
   },
   computed: {
