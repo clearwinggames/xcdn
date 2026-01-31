@@ -90,10 +90,12 @@ Vue.component('recursive-vue-app',
 			  // this is not going to work so well if we're dealing with more than one layer of separation, is it?  Need to make this more recursive somehow.
 			  for (let i = 0; i < routes.length; i++) {
 					if (this.isOldestAncestor(route, routes[i])) {
+						console.log('IsOldestAncestor: ' + route.path + '; ' + routes[i].path);
 						oldestAncestor = routes[i];
 					}
 				    else if (this.isParent(route, routes[i])) {
 						// directly assign the route to the route
+						console.log('IsParent: ' + route.path + '; ' + routes[i].path);
 						if (typeof routes[i].children == 'undefined') {
 							routes[i].children = [ route ];
 						}
@@ -103,17 +105,28 @@ Vue.component('recursive-vue-app',
 					}
 				    else if (this.isAncestor(route, routes[i])) {
 						// call assign as child again somehow?
+						console.log('IsAncestor: ' + route.path + '; ' + routes[i].path);
 						if (oldestAncestor != null)
 							oldestAncestor.descendent = routes[i]; // build out a linked list
+					}
+				    else {
+						console.log('NoRelation: ' + route.path + '; ' + routes[i].path);
 					}
 			  }
 		  }
 	  },
 	  isParent: function(routeChild, routeOther) {
-
+			if (this.isAncestor(routeChild, routeOther)) {
+				/* inner determination */
+				if (routeChild.path.indexOf(routerOther.path) > 0) { // needs more 
+					return true;	
+				}
+			}
+		  	return false;
 	  },
 	  isAncestor: function(routeChild, routeOther) {
-
+		 if (routeChild.path.indexOf(routeOther.path) > 0 || routeChild.path.indexOf(routeOther.path.substring(1)) return true;
+		  return false;
 	  },
 	  isOldestAncestor: function(routeChild, routeOther) {
 			// presumably we just match the routes		  
