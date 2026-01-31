@@ -84,11 +84,15 @@ Vue.component('recursive-vue-app',
 			// we have the full/path here, let's find a suitable parent and add this.
 		  let sections = this.getSections(route.path);
 		  let routes = this.router.getRoutes();
+		  let oldestAncestor = null;
 		  for (let j = 0; j < sections.length; j++) {
 				// first/part, lets find the root level (parent) route
 			  // this is not going to work so well if we're dealing with more than one layer of separation, is it?  Need to make this more recursive somehow.
 			  for (let i = 0; i < routes.length; i++) {
-					if (this.isParent(route, routes[i])) {
+					if (this.isOldestAncestor(route, routes[i])) {
+						oldestAncestor = routes[i];
+					}
+				    else if (this.isParent(route, routes[i])) {
 						
 					}
 				    else if (this.isAncestor(route, routes[i])) {
@@ -102,6 +106,11 @@ Vue.component('recursive-vue-app',
 	  },
 	  isAncestor: function(routeChild, routeOther) {
 
+	  },
+	  isOldestAncestor: function(routeChild, routeOther) {
+			// presumably we just match the routes		  
+		  if (routeChild.path.startsWith(routeOther.path) || routeChild.path.startsWith(routeOther.path.substring(1)) return true;
+		  return false;
 	  },
 	  getParentRoute: function(parentLevelName, router) {
 		 let routes = router.getRoutes();
