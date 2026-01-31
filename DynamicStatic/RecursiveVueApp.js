@@ -125,12 +125,12 @@ Vue.component('recursive-vue-app',
 		  	return false;
 	  },
 	  isAncestor: function(routeChild, routeOther) {
-		 if (routeChild.path.indexOf(routeOther.path) > 0 || routeChild.path.indexOf(routeOther.path.substring(1)) return true;
+		 if (routeChild.path.indexOf(routeOther.path) > 0 || routeChild.path.indexOf(routeOther.path.substring(1))) return true;
 		  return false;
 	  },
 	  isOldestAncestor: function(routeChild, routeOther) {
 			// presumably we just match the routes		  
-		  if (routeChild.path.startsWith(routeOther.path) || routeChild.path.startsWith(routeOther.path.substring(1)) return true;
+		  if (routeChild.path.startsWith(routeOther.path) || routeChild.path.startsWith(routeOther.path.substring(1))) return true;
 		  return false;
 	  },
 	  getParentRoute: function(parentLevelName, router) {
