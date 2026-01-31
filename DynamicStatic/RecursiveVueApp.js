@@ -93,10 +93,18 @@ Vue.component('recursive-vue-app',
 						oldestAncestor = routes[i];
 					}
 				    else if (this.isParent(route, routes[i])) {
-						
+						// directly assign the route to the route
+						if (typeof routes[i].children == 'undefined') {
+							routes[i].children = [ route ];
+						}
+						else {
+							routes[i].children.push(route);
+						}
 					}
 				    else if (this.isAncestor(route, routes[i])) {
 						// call assign as child again somehow?
+						if (oldestAncestor != null)
+							oldestAncestor.descendent = routes[i]; // build out a linked list
 					}
 			  }
 		  }
