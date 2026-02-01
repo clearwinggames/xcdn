@@ -55,7 +55,8 @@ Vue.component('recursive-vue-app',
 					 // but basically, need to find the parent route and add the child but only the last part of the path.
 					 // route.path = route.path.substring
 					 // use this.getSections(path)
-					 this.assignAsChild(route);
+					 this.assignAsChild(route);]
+					 return;
 				 }
 				 else {
 				 	route.path = route.path.replace(routes[i].path, '');
@@ -96,6 +97,9 @@ Vue.component('recursive-vue-app',
 				    else if (this.isParent(route, routes[i])) {
 						// directly assign the route to the route
 						console.log('IsParent: ' + route.path + '; ' + routes[i].path);
+						
+						route.path = route.path.substring(1 + route.path.indexOf('/'));
+						
 						if (typeof routes[i].children == 'undefined') {
 							routes[i].children = [ route ];
 						}
