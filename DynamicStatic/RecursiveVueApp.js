@@ -123,9 +123,9 @@ Vue.component('recursive-vue-app',
 	  isParent: function(routeChild, routeOther) {
 			if (this.isAncestor(routeChild, routeOther)) {
 				/* inner determination */
-				if (routeChild.path.indexOf(routeOther.path) > 0) { // needs more 
+				//if (routeChild.path.indexOf(routeOther.path) > 0) { // needs more 
 					return true;	
-				}
+				//}
 			}
 		  	return false;
 	  },
