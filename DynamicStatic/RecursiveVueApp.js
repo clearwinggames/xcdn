@@ -141,8 +141,9 @@ Vue.component('recursive-vue-app',
 	  hasChild: function(routeChild, routeOther) {
 		  if (typeof routeOther.children == 'undefined') return false;
 		  for(let i = 0; i < routeOther.children.length; i++) {
-			
+				if (routeOther.children[i].path == routeChild.path) return true;					
 		  }
+		  return false;
 	  },
 	  getParentRoute: function(parentLevelName, router) {
 		 let routes = router.getRoutes();
