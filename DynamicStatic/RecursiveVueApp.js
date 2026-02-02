@@ -91,7 +91,7 @@ Vue.component('recursive-vue-app',
 			  // this is not going to work so well if we're dealing with more than one layer of separation, is it?  Need to make this more recursive somehow.
 			  for (let i = 0; i < routes.length; i++) {
 
-				    if (this.isParent(route, routes[i])) {
+				    if (this.isParent(route, routes[i]) && !this.hasChild(route, routes[i])) {
 						// directly assign the route to the route
 						console.log('IsParent: ' + route.path + '; ' + routes[i].path);
 						
@@ -137,6 +137,12 @@ Vue.component('recursive-vue-app',
 			// presumably we just match the routes		  
 		  if (routeChild.path.startsWith(routeOther.path) || routeChild.path.startsWith(routeOther.path.substring(1))) return true;
 		  return false;
+	  },
+	  hasChild: function(routeChild, routeOther) {
+		  if (typeof routeOther.children == 'undefined') return false;
+		  for(let i = 0; i < routeOther.children.length; i++) {
+			
+		  }
 	  },
 	  getParentRoute: function(parentLevelName, router) {
 		 let routes = router.getRoutes();
