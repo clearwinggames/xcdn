@@ -157,6 +157,14 @@ Vue.component('recursive-vue-app',
 	  getCurrentRoute: function() {
 			return this.$route.path;
 	  },
+	  getCurrentTemplate: function() {
+			// fetch the template that corresponds to the route
+		  let routes = this.router.getRoutes();
+		  for (let i = 0; i < routes.length; i++)
+		  {
+			 
+		  }
+	  },
 	  getSections: function(path) {
 		  let routes = path.split('/');
 		  for (let i = 0; i < routes.length; i++){
@@ -196,7 +204,7 @@ Vue.component('recursive-vue-app',
     <div v-if="debug == true && mounted_plus_delay == true">
 	   Debug On
 	   <hr />
-	   	{{ getCurrentRoute() }}
+	   	{{ getCurrentRoute() }} -- {{ getCurrentTemplate() }}
     	<hr />
 	   <div v-for="route in router.getRoutes()">
 	       {{ route.path }}
