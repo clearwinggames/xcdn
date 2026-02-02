@@ -164,10 +164,21 @@ Vue.component('recursive-vue-app',
 		  // this is going to need to be recursive. figure this out and I think everything else should follow
 		  for (let i = 0; i < routes.length; i++)
 		  {
-			 if (this.getCurrentRoute().startsWith(routes[i].path));
-			  return 'todo: implement';
+			 if (this.getCurrentRoute().startsWith(routes[i].path))
+			  return this.findCurrentTemplate(routeSections, routes[i]);
 		  }
-		  return 'todo: implement this.';
+		  return 'Not Found';
+	  },
+	  findCurrentTemplate: function(routeSections, currentObject) {
+			// for each additional level of the routes, reassign currentObject and recur.  If another level can't be found, return current level
+		  let foundNext = false;
+		  let template = '';
+
+		  
+
+		  if (foundNext == false)
+			  return template;
+		  return this.findCurrentTemplate(routeSections, currentObject);
 	  },
 	  getSections: function(path) {
 		  let routes = path.split('/');
