@@ -162,8 +162,10 @@ Vue.component('recursive-vue-app',
 		  let routes = this.router.getRoutes();
 		  for (let i = 0; i < routes.length; i++)
 		  {
-			 
+			 if (this.getCurrentRoute().startsWith(routes[i].path));
+			  return 'todo: implement';
 		  }
+		  return 'todo: implement this.';
 	  },
 	  getSections: function(path) {
 		  let routes = path.split('/');
