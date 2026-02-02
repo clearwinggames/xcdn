@@ -165,8 +165,10 @@ Vue.component('recursive-vue-app',
 		  // this is going to need to be recursive. figure this out and I think everything else should follow
 		  for (let i = 0; i < routes.length; i++)
 		  {
-			 if (this.getCurrentRoute().startsWith(routes[i].path))
+			 if (this.getCurrentRoute().startsWith(routes[i].path)) {
+				 console.log(this.getCurrentRoute() + ' starts with ' + routes[i].path);
 			  return this.findCurrentTemplate(routeSections, routes[i]);
+			 }
 		  }
 		  return 'Not Found';
 	  },
