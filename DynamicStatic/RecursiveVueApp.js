@@ -187,6 +187,8 @@ Vue.component('recursive-vue-app',
 		  for (let i = 0; i < routes.length; i++){
 			  if (i > 0)
 				  routes[i] = routes[i - 1] + routes[i] + '/';
+			  else 
+				  routes[i] = '/' + routes[i];
 		  }
 		  return routes;
 	  },
