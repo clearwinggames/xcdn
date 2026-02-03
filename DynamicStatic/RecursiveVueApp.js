@@ -184,8 +184,8 @@ Vue.component('recursive-vue-app',
 		  let template = '';
 
 		  if (typeof currentObject.children == 'undefined') {
-			  console.log('Returning template from current object; no children found');
-			  return template;
+			  console.log('Returning template from current object; no children found: ' + JSON.stringify(currentObject));
+			  return currentObject.components.default.template;
 		  }
 
 		  for (let i = 0; i < currentObject.children.length; i++) 
@@ -368,3 +368,4 @@ function httpGet(url)
     xhttp.send();
   });
 }
+ 
