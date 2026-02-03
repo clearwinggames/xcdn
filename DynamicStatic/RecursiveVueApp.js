@@ -193,7 +193,7 @@ Vue.component('recursive-vue-app',
 			  console.log('Looking at route: ' + currentObject.children[j].path + ' against routeSections ' + routeSections.toString());
 			  for (let i = 0; i < routeSections.length; i++) {
 				  console.log('Comparing ' + routeSections[i] + ' vs ' + currentObject.children[j].path);
-				if (routeSections[i].indexOf(currentObject.children[j].path) == 0 || routeSections[i].indexOf(currentObject.children[j].path) == 1) 
+				if (routeSections[i].indexOf(currentObject.children[j].path) == 0 || routeSections[i].indexOf(currentObject.children[j].path) > 0) 
 				{
 					return this.findCurrentTemplate(routeSections, currentObject.children[j]);
 				}
