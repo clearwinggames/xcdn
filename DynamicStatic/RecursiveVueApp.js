@@ -178,12 +178,26 @@ Vue.component('recursive-vue-app',
 		  return 'Not Found';
 	  },
 	  findCurrentTemplate: function(routeSections, currentObject) {
-		  console.log('Looking to find template in ' + routeSections.toString() + ' against ' + currentObject.path);
+		  console.log('Looking to find template in ' + routeSections.toString() + ' against ' + currentObject.path + ': ' + JSON.stringify(currentObject));
 			// for each additional level of the routes, reassign currentObject and recur.  If another level can't be found, return current level
 		  let foundNext = false;
 		  let template = '';
 
-		  
+		  if (typeof currentObject.children == 'undefined') {
+			  console.log('Returning template from current object; no children found');
+			  return template;
+		  }
+
+		  for (let i = 0; i < currentObject.children.length; i++) 
+		  {
+			  console.log('Looking at route: ' + currentObject.children[i].path);
+				if (currentObject.children[i].startsWith('fixthis')) 
+				{
+					return this.findCurrentTemplate(routeSections, currentObject.children[i]);
+				}
+		  }
+
+		  // update currentObject and foundNext 
 
 		  if (foundNext == false)
 			  return template;
