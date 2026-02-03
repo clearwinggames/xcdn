@@ -44,7 +44,19 @@ Vue.component('recursive-vue-app',
 			 } // routes[i].path is existing (base) route, path is the new path to add
 			 else if (routes[i].path.length > 1 && (path.startsWith(routes[i].path) || path.startsWith(routes[i].path.substring(1)))) // parent-child relationship possibly?
 			 {
-				 console.log('Adding child relationship: ' + path + '; vs ' + routes[i].path + ' (' +  route.path.replace(routes[i].path, '') + ') ' + JSON.stringify(route.components));
+				 this.performRouterAdd(path, route, routes[i]);
+				 
+				 return;
+			 }
+		  }
+		  // and either add this route straight in or, potentially, add it as a child to an existing root
+		  console.log('Adding New Route (' + path +')')
+		  this.router.addRoute(route);
+	  },
+	  performRouterAdd: function(path, route, routeToAddTo) 
+	  {
+				console.log('Adding child relationship: ' + path + '; vs ' + routeToAddTo.path + ' (' +  
+							 route.path.replace(routeToAddTo.path, '') + ') ' + JSON.stringify(route.components));
 
 				 if (path.indexOf('/') == 0 && path.lastIndexOf('/') > 0) {
 
@@ -59,22 +71,16 @@ Vue.component('recursive-vue-app',
 					 return;
 				 }
 				 else {
-				 	route.path = route.path.replace(routes[i].path, '');
+				 	route.path = route.path.replace(routeToAddTo.path, '');
 				 	if (route.path.startsWith('/')) route.path = route.path.substring(1);
 				 }
 				 
-				 if (typeof routes[i].children == 'undefined')
-					 routes[i].children = [ route ];
-				 else if (routes[i].children.filter(c => c.path == route.path).length == 0)
-					 routes[i].children.push(route);
+				 if (typeof routeToAddTo.children == 'undefined')
+					 routeToAddTo.children = [ route ];
+				 else if (routeToAddTo.children.filter(c => c.path == route.path).length == 0)
+					 routeToAddTo.children.push(route);
 				 else 
 					 console.log('Conflict, not adding route ' + route.path);
-				 return;
-			 }
-		  }
-		  // and either add this route straight in or, potentially, add it as a child to an existing root
-		  console.log('Adding New Route (' + path +')')
-		  this.router.addRoute(route);
 	  },
 	  getLevelName: function() {
 		  if (this.levelName != null && this.levelName.length > 0) return this.levelName;
