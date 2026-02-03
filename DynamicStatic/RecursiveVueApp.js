@@ -191,7 +191,7 @@ Vue.component('recursive-vue-app',
 		  for (let i = 0; i < currentObject.children.length; i++) 
 		  {
 			  console.log('Looking at route: ' + currentObject.children[i].path);
-				if (currentObject.children[i].startsWith('fixthis')) 
+				if (currentObject.children[i].path.startsWith('fixthis')) 
 				{
 					return this.findCurrentTemplate(routeSections, currentObject.children[i]);
 				}
