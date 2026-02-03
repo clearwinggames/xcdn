@@ -1,0 +1,13 @@
+{
+	"entries": [
+	{
+		"title": "CWGJS",
+		"route": "CWGJS/3WG/VOM",
+		"template": "<div>VOM Here</div>",
+		"view": {
+			"name": "",
+			"path": ""
+		}
+	}
+	]
+}
