@@ -3,7 +3,8 @@
     	{
     		"title": "3WG",
 		    "route": "CWGJS/3WG",
-    		"template": "<div>3WG Here</div>",
+			"target": "./main/third.json",
+    		"template": "<div>3WG Here <div>{{ recurse }}</div></div>",
 		    "view": {
 			    "name": "",
     			"path": ""
