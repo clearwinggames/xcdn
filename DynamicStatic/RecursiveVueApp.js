@@ -188,13 +188,15 @@ Vue.component('recursive-vue-app',
 			  return currentObject.components.default.template;
 		  }
 
-		  for (let i = 0; i < currentObject.children.length; i++) 
+		  for (let j = 0; j < currentObject.children.length; j++) 
 		  {
-			  console.log('Looking at route: ' + currentObject.children[i].path + ' against routeSections ' + routeSections.toString());
-				if (currentObject.children[i].path.startsWith('fixthis')) 
+			  console.log('Looking at route: ' + currentObject.children[j].path + ' against routeSections ' + routeSections.toString());
+			  for (let i = 0; i < routeSections.length; i++) {
+				if (routeSections[i].indexOf(currentObject.children[j].path) == 0 || routeSections[i].indexOf(currentObject.children[j].path) == 1) 
 				{
-					return this.findCurrentTemplate(routeSections, currentObject.children[i]);
+					return this.findCurrentTemplate(routeSections, currentObject.children[j]);
 				}
+			  }
 		  }
 
 		  // update currentObject and foundNext 
