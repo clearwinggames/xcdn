@@ -89,11 +89,13 @@ Vue.component('recursive-vue-app',
 		  for (let j = 0; j < sections.length; j++) {
 				// first/part, lets find the root level (parent) route
 			  // this is not going to work so well if we're dealing with more than one layer of separation, is it?  Need to make this more recursive somehow.
-			  for (let i = 0; i < routes.length; i++) {
-
-				    if (this.isParent(route, routes[i])) {
+			  for (let i = 0; i < routes.length; i++) 
+			  {
+				    if (this.isParent(route, routes[i]) && routes[i].path.length > 1) 
+					{
 						// directly assign the route to the route
-						console.log('IsParent: ' + route.path + '; ' + routes[i].path);
+						console.log('IsParent: ' + route.path + '; Parent Is => ' + routes[i].path);
+						
 						if (!this.hasChild(route, routes[i])) 
 						{						
 							route.path = route.path.substring(1 + route.path.indexOf('/'));
