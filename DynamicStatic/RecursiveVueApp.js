@@ -144,8 +144,11 @@ Vue.component('recursive-vue-app',
 	  },
 	  hasChild: function(routeChild, routeOther) {
 		  if (typeof routeOther.children == 'undefined') return false;
+		  
+	      let localPath = routeChild.path.substring(1 + routeChild.path.indexOf('/'));
+		  
 		  for(let i = 0; i < routeOther.children.length; i++) {
-				if (routeOther.children[i].path == routeChild.path) return true;					
+				if (routeOther.children[i].path == localPath) return true;					
 		  }
 		  return false;
 	  },
