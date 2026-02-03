@@ -255,6 +255,9 @@ Vue.component('recursive-vue-app',
 	   <hr />
 	   	{{ getCurrentRoute() }} -- {{ getCurrentTemplate() }}
     	<hr />
+		Component Render: <component :is="{ template: getCurrentTemplate() }"></component>
+		<br />
+		<hr />
 	   <div v-for="route in router.getRoutes()">
 	       {{ route.path }}
 		   <div v-if="typeof route.children != 'undefined'">
