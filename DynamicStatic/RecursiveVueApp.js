@@ -181,7 +181,7 @@ Vue.component('recursive-vue-app',
 		  console.log('Looking to find template in ' + routeSections.toString() + ' against ' + currentObject.path);// + ': ' + JSON.stringify(currentObject));
 			// for each additional level of the routes, reassign currentObject and recur.  If another level can't be found, return current level
 		  let foundNext = false;
-		  let template = '';
+		  let template = currentObject.template;
 
 		  if (typeof currentObject.children == 'undefined') {
 			  console.log('Returning template from current object; no children found: ' + JSON.stringify(currentObject));
