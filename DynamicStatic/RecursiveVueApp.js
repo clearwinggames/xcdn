@@ -117,8 +117,13 @@ Vue.component('recursive-vue-app',
 					else if (this.isOldestAncestor(route, routes[i])) {
 						console.log('IsOldestAncestor: ' + route.path + '; ' + routes[i].path); // need to do something here
 						oldestAncestor = routes[i];
-						if (typeof oldestAncestor.children != 'undefined')
-							this.assignAsChild(oldestAncestor, oldestAncestor.children);				
+						if (typeof oldestAncestor.children != 'undefined') {
+							this.assignAsChild(oldestAncestor, oldestAncestor.children);		
+						}
+						else {
+							oldestAncestor.children = [ route ];
+							this.assignAsChild(oldestAncestor, oldestAncestor.children); 
+						}
 					}
 				    else if (this.isAncestor(route, routes[i])) {
 						// call assign as child again somehow?
