@@ -271,6 +271,11 @@ Vue.component('recursive-vue-app',
 		   <div v-if="typeof route.children != 'undefined'">
 		      <div v-for="child in route.children">
 			  	 -- {{ child.path }}  ( {{ JSON.stringify(child.components) }} )
+				 <div v-if="typeof child.children != 'undefined'">
+					 <div v-for="childchild in child.children">
+					 	-- -- {{ childchild.path }}  ( {{ JSON.stringify(childchild.components) }} )
+					 </div>
+ 				</div>
 			  </div>
 		   </div>
 	   </div>
