@@ -108,6 +108,9 @@ Vue.component('temp-test', {
       `
     });
   }
+  setTimeout(() => {
+    httpGet('https://clearwinggames.github.io/ValleyOfMasks/lib/main.js').then(x => alert(X));
+  }, 2000);
 </script>
 <script>
   const STORAGE_KEY = 'savedTextFileContent';
