@@ -109,5 +109,89 @@ Vue.component('temp-test', {
     });
   }
 </script>
+<script>
+  const STORAGE_KEY = 'savedTextFileContent';
+const FILENAME_KEY = 'savedTextFileName';
+
+function uploadFile() {
+    const fileInput = document.getElementById('fileInput');
+    const messageArea = document.getElementById('message');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        messageArea.textContent = 'Please select a file first.';
+        return;
+    }
+
+    // Check if the file is a text file
+    if (file.type && !file.type.startsWith('text/')) {
+        messageArea.textContent = 'Please select a text file (.txt).';
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        const fileContent = event.target.result;
+        try {
+            // Store the content and file name in localStorage as strings
+            localStorage.setItem(STORAGE_KEY, fileContent);
+            localStorage.setItem(FILENAME_KEY, file.name);
+            messageArea.textContent = `File "${file.name}" successfully saved to localStorage.`;
+            console.log('File content saved:', fileContent);
+        } catch (e) {
+            messageArea.textContent = 'Failed to save file to localStorage. Storage might be full.';
+            console.error('localStorage error:', e);
+        }
+    };
+
+    reader.onerror = function() {
+        messageArea.textContent = 'Error reading file.';
+    };
+
+    // Read the file content as plain text
+    reader.readAsText(file);
+}
+
+function downloadFile() {
+    const downloadMessageArea = document.getElementById('downloadMessage');
+    const savedContent = localStorage.getItem(STORAGE_KEY);
+    const savedFileName = localStorage.getItem(FILENAME_KEY) || 'downloaded_file.txt';
+
+    if (!savedContent) {
+        downloadMessageArea.textContent = 'No file content found in localStorage.';
+        return;
+    }
+
+    // Create a Blob from the saved content
+    const blob = new Blob([savedContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+
+    // Create a temporary anchor element to trigger the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = savedFileName; // Set the file name for download
+    a.style.display = 'none';
+    document.body.appendChild(a);
+
+    // Simulate a click to trigger the download, then clean up
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url); // Free up the object URL
+
+    downloadMessageArea.textContent = `File "${savedFileName}" download initiated.`;
+}
+</script>
+  <div>
+      <h1>Upload Text File to LocalStorage</h1>
+    <input type="file" id="fileInput" accept=".txt">
+    <button onclick="uploadFile()">Upload and Save</button>
+    <p id="message"></p>
+
+    <h1>Download File from LocalStorage</h1>
+    <button onclick="downloadFile()">Download Saved File</button>
+    <p id="downloadMessage"></p>
+
+  </div>
 </body>
 </html>
