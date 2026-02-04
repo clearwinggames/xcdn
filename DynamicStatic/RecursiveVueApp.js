@@ -115,7 +115,7 @@ Vue.component('recursive-vue-app',
 						}
 					}
 					else if (this.isOldestAncestor(route, routes[i])) {
-						console.log('IsOldestAncestor: ' + route.path + '; ' + routes[i].path);
+						console.log('IsOldestAncestor: ' + route.path + '; ' + routes[i].path); // need to do something here
 						oldestAncestor = routes[i];
 					}
 				    else if (this.isAncestor(route, routes[i])) {
@@ -136,7 +136,7 @@ Vue.component('recursive-vue-app',
 				if (otherPath.startsWith('/')) otherPath = otherPath.substring(1);
 				/* inner determination */
 				console.log('Checking routeChild.path ' + routeChild.path + ' against routeOther ' + otherPath + ': ' + routeChild.path.indexOf(otherPath).toString() + ' vs ' + routeChild.path.length.toString());
-				if (routeChild.path.indexOf(otherPath) >= 0 && routeChild.path.endsWith(otherPath) || routeChild.path.substring(1).endsWith(otherPath) || routeChild.path.substring(1).endsWith(otherPath.substring(1)) || routeChild.path.endsWith(otherPath.substring(1))) {  
+				if (routeChild.path.indexOf(otherPath) >= 0 && (routeChild.path.endsWith(otherPath) || routeChild.path.substring(1).endsWith(otherPath) || routeChild.path.substring(1).endsWith(otherPath.substring(1)) || routeChild.path.endsWith(otherPath.substring(1)))) {  
 					//console.log('IsParent');
 					return true;	
 				}
