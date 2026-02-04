@@ -133,7 +133,7 @@ Vue.component('recursive-vue-app',
 	  isParent: function(routeChild, routeOther) {
 			if (this.isAncestor(routeChild, routeOther) || this.isOldestAncestor(routeChild, routeOther)) {
 				/* inner determination */
-				console.log('Checking routeChild.path ' + routeChild.path + ' against routeOther ' + routeOther.path ': ' + routeChild.path.indexOf(routeOther.path).toString() + ' vs ' + routeChild.path.length.toString());
+				console.log('Checking routeChild.path ' + routeChild.path + ' against routeOther ' + routeOther.path + ': ' + routeChild.path.indexOf(routeOther.path).toString() + ' vs ' + routeChild.path.length.toString());
 				if (routeChild.path.indexOf(routeOther.path) - 1 <= routeChild.path.length) {  
 					//console.log('IsParent');
 					return true;	
