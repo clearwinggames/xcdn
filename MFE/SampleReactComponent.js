@@ -11,11 +11,11 @@ export default function App() {
   );
 }
 // Destructure the 'props' object directly in the function parameters
-function Greeting({ name, age }) {
+export function Greeting({ name, age }) {
   return (
     <p>
       Hello, {name}! You are {age} years old.
     </p>
   );
 }
-export default Greeting;
+//export default Greeting;
