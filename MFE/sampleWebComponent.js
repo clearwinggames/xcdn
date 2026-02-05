@@ -53,12 +53,13 @@ render() {
             <div class="container">
                 <p class="greeting">Hello, <span id="name">${name}</span>!</p>
             </div>
-        
+        `;
   }
 
     // A lifecycle method called when the element is added to the document's DOM
     connectedCallback() {
-        this.render();/*
+        this.render();
+        /*
         const nameSpan = this.shadowRoot.querySelector('#name');
         // Get the 'name' attribute from the HTML and set the text content
         const name = this.getAttribute('name') || 'Guest';
