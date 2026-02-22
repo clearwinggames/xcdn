@@ -268,33 +268,6 @@ Vue.component('recursive-vue-app',
   },
   template: `
   <div>
-    <hr />
-    <div v-if="debug == true && mounted_plus_delay == true">
-	   Debug On
-	   <hr />
-	   	{{ getCurrentRoute() }} -- {{ getCurrentTemplate() }}
-    	<hr />
-		Component Render: <component :is="{ template: getCurrentTemplate() }"></component>
-		<br />
-		<hr />
-	   <div v-for="route in router.getRoutes()">
-	       {{ route.path }}
-		   <div v-if="typeof route.children != 'undefined'">
-		      <div v-for="child in route.children">
-			  	 -- {{ child.path }}  ( {{ JSON.stringify(child.components) }} )
-				 <div v-if="typeof child.children != 'undefined'">
-					 <div v-for="childchild in child.children">
-					 	-- -- {{ childchild.path }}  ( {{ JSON.stringify(childchild.components) }} )
-					 </div>
- 				</div>
-			  </div>
-		   </div>
-	   </div>
-	</div>
-	<div v-if="debug != true">
-	   Debug Off
-	</div>
-	<hr />
   	<div v-if="structure != null && structure.entries != null">
   	 <div v-for="entry in structure.entries">
 	 	<div v-show="true">
