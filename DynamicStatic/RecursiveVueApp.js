@@ -280,6 +280,8 @@ Vue.component('recursive-vue-app',
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
 	 <div v-show="routeLoaded == true">
+	 	<component :is="{ template: preprocessEntryTemplate(entry) }"></component>
+		<br />Above: component is; below router-view<br />
 	 	<router-view></router-view>
 	 <div v-if="routeLoaded != true">
 	 	Route not loaded
