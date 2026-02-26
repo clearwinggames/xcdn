@@ -269,7 +269,7 @@ Vue.component('recursive-vue-app',
 		  var entry = this.getActiveEntry(); // figure out how to get this
 		  if (entry.template.length == 0) return 'todo: implement this';
 		  return this.preprocessEntryTemplate(entry);
-	  }
+	  },
 	  preprocessEntryTemplate: function(entry) {
 			return entry.template.replace('{{ recurse }}', 
 	`<div><recursive-vue-app 
