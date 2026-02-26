@@ -301,8 +301,10 @@ Vue.component('recursive-vue-app',
   	<div v-if="structure != null && structure.entries != null">
   	 <div v-for="entry in structure.entries">
 	 	<div v-show="true">
-			Is Active Component? {{ isEntryInUrl(entry) }}
-		    Preprocessed Component: <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
+			Component: ( {{ entry.title }} ) Is Active Component? {{ isEntryInUrl(entry) }}
+			<div v-show="isEntryInUrl(entry)">
+			    Preprocessed Component: <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
+			</div>				
 		</div>
 		
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
