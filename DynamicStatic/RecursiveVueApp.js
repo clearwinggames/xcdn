@@ -255,6 +255,17 @@ Vue.component('recursive-vue-app',
 		  else if (urlStart.endsWith('/') && urlEnd.startsWith('/')) return urlStart.trimEnd('/') + urlEnd;
 		  return urlStart + '/' + urlEnd;  
 	  },
+	  isEntryInUrl: function(entry) {
+			if (location.href.indexOf(entry.route) >= 0) return true;
+		  return false;
+	  },
+	  filterEntriesByUrl: function(entries) {		  
+			for (let i = 0; i < entries.length; i++) {
+				if (this.isEntryInUrl(entries[i]))
+					return entries[i];
+			}
+		  return [];
+	  },
 	  getActiveEntry: function() {
 			// this will have a template, etc
 		  return {
@@ -284,7 +295,7 @@ Vue.component('recursive-vue-app',
   template: `
   <div>
   	<div v-if="structure != null && structure.entries != null">
-  	 <div v-for="entry in structure.entries">
+  	 <div v-for="entry in filterEntriesByUrl(structure.entries)">
 	 	<div v-show="true">
 		    <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
 		</div>
