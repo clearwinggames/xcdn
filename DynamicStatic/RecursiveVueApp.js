@@ -297,7 +297,7 @@ Vue.component('recursive-vue-app',
   	<div v-if="structure != null && structure.entries != null">
   	 <div v-for="entry in filterEntriesByUrl(structure.entries)">
 	 	<div v-show="true">
-		    <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
+		    Preprocessed Component: <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
 		</div>
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
 	 </div>	 
