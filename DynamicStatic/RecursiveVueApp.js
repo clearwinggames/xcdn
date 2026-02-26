@@ -255,6 +255,11 @@ Vue.component('recursive-vue-app',
 		  else if (urlStart.endsWith('/') && urlEnd.startsWith('/')) return urlStart.trimEnd('/') + urlEnd;
 		  return urlStart + '/' + urlEnd;  
 	  },
+	  preprocessActiveEntryTemplate: function() {
+			// get entry then call preprocessEntryTemplate on it
+		  var entry = {}; // figure out how to get this
+		  return this.preprocessEntryTemplate(entry);
+	  }
 	  preprocessEntryTemplate: function(entry) {
 			return entry.template.replace('{{ recurse }}', 
 	`<div><recursive-vue-app 
@@ -280,8 +285,11 @@ Vue.component('recursive-vue-app',
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
 	 <div v-show="routeLoaded == true">
-		<br />Above: component is; below router-view<br />
+	 	<hr />
+		<component :is="{ template: preprocessActiveEntryTemplate() }"></component>
+		<br /><hr />Above: component is; below router-view<hr /><br />
 	 	<router-view></router-view>
+		<hr />
 	 <div v-if="routeLoaded != true">
 	 	Route not loaded
 	 </div>
