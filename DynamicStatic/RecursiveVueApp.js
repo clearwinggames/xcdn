@@ -300,11 +300,12 @@ Vue.component('recursive-vue-app',
 		    <component :is="{ template: preprocessEntryTemplate(entry) }"></component>
 		</div>
 	 	<a :href="singleSlash(location.href, entry)">{{ entry.title }}</a>
-	 </div>
+	 </div>	 
 	 <div v-if="routeLoaded == true">
-	{{ getLevelName() }}
+		Level Name: {{ getLevelName() }}
 	     <router-view :name="getLevelName()"></router-view>
 	 </div>
+	 <hr />Component Pairs<hr />
 	 <div v-show="routeLoaded == true">
 	 	<hr />
 		<component :is="{ template: preprocessActiveEntryTemplate() }"></component>
