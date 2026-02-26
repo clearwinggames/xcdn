@@ -256,7 +256,7 @@ Vue.component('recursive-vue-app',
 		  return urlStart + '/' + urlEnd;  
 	  },
 	  isEntryInUrl: function(entry) {
-			if (location.href.indexOf(entry.route) >= 0) return true;
+			if (typeof entry.route != 'undefined' && location.href.indexOf(entry.route) >= 0) return true;
 		  return false;
 	  },
 	  filterEntriesByUrl: function(entries) {		  
